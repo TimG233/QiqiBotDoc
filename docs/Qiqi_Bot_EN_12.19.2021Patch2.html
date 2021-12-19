@@ -1,0 +1,680 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Qiqi_Bot_EN</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#qiqi-bot">Qiqi Bot</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#attention">Attention</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#introduction"><strong>Introduction</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#about-qiqi">About Qiqi</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#supported-language">Supported Language</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#how-to-invite-qiqi-bot-to-my-server">How to Invite Qiqi Bot to My Server?</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#commands">Commands</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#genshin-impact-commands">Genshin Impact Commands</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#music-commands">Music Commands</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#fun-commands">Fun Commands </a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#admin-commands">Admin Commands</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#faq">FAQ</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#policy-statement">Policy Statement</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#version-tracker">Version Tracker</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#contact">Contact</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='qiqi-bot'><span>Qiqi Bot</span></h1><h3 id='attention'><span>Attention</span></h3><p><strong><u><span>Qiqi Bot is currently in the progress of verification by Discord. During verification, Qiqi CANNOT be added to more servers (reach limit 100). I apologize for this inconvenience. The verification should be done on 12/24/2021 (approximately).</span></strong></u></p><p>&nbsp;</p><h3 id='introduction'><strong><span>Introduction</span></strong></h3><hr /><p><span>	</span><span>Qiqi Bot is a Discord Bot programmed by Discord.py. It has various functionalities to provide you a great experience with Discord.</span></p><h4 id='about-qiqi'><span>About Qiqi</span></h4><p><span>	</span><span>The word &quot;Qiqi&quot; originates from the game Genshin Impact. In the game, Qiqi is a cute and interesting character due to her own experience. Therefore, when the coder created this bot, he decided to choose this character as the bot&#39;s name. </span></p><p><span>    At this point, the Qiqi Bot is </span><u><span>NOT open-source</span></u><span>, but it is totally </span><strong><span>free-to-use</span></strong><span> (no extra payment at all). </span></p><h4 id='supported-language'><span>Supported Language</span></h4><p><span>	</span><span>The primary language for the Qiqi Bot is English. While the Qiqi Bot can also support Chinese (Mandarin) for particular functionalities like Genshin Impact Calculator.</span></p><h4 id='how-to-invite-qiqi-bot-to-my-server'><span>How to Invite Qiqi Bot to My Server?</span></h4><p><span>	</span><span>You could invite Qiqi Bot through Top.gg by searching the keyword &quot;Qiqi&quot;. You could also copy and paste the following link to your browser to invite Qiqi Bot to your server:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.25px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">https://discord.com/api/oauth2/authorize?client_id=842132130858401863&amp;permissions=8&amp;scope=bot</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 46px;"></div><div class="CodeMirror-gutters" style="display: none; height: 46px;"></div></div></div></pre><p><span>	</span></p><p><span>	</span><span>While Qiqi Bot is still under development in its beta version, Qiqi Bot could have minor bugs when using. You are really welcomed to share the bugs for developer to build a more stable version. Thank you for your cooperation and our mutual goal is to develop a better Qiqi Bot!</span></p><h3 id='commands'><span>Commands</span></h3><hr /><p><span>	</span><span>This part shows all the commands that Qiqi Bot has. The commands divides into four parts:</span></p><ul><li><a href='#genshin-impact-commands'><span>Genshin Impact Commands</span></a></li><li><a href='#music-commands'><span>Music Commands</span></a></li><li><a href='#fun-commands'><span>Fun Commands</span></a></li><li><a href='#admin-commands'><span>Admin Commands</span></a></li></ul><p><span>	</span><span>For demonstration purposes, the command default prefix  is &quot;</span><code>/</code><span>&quot; for all examples in this document.</span></p><h4 id='genshin-impact-commands'><span>Genshin Impact Commands</span></h4><hr /><p><span>	</span><span>Genshin Impact commands by Qiqi Bot mainly focus on the calculations of characters and weapons in this game. It can also support to check all the materials related to the characters and weapons. There will be more commands about Genshin Impact coming soon!</span></p><p><strong><span>Compatible with Game Version: 2.3 (Oni&#39;s Royale 2021-12-14)</span></strong></p><ul><li><p><strong><span>rolecalc</span></strong><span>: Calculate role ascension exp, mora, and materials. Enter the role name first and </span><code>:</code><span>. Then enter low level and high level next, separated by </span><code>-</code><span>. Alternative/Informal name of roles/characters are supported (Most of them huh). All levels (1 - 90) are supported.</span></p><ul><li><span>Example (diluc, from level 26 to level 73): </span><code>/rolecalc diluc: 26 - 73</code><span> (Spaces between data and symbols are fine with Qiqi Bot)</span></li><li><span>Example (Alternative Name for zhongli: Morax, 66 - 89): </span><code>/rolecalc Morax:66-89</code><span> (Capitalization are fine with Qiqi Bot)</span></li></ul></li><li><p><strong><span>weaponcalc</span></strong><span>: Calculate weapon ascension exp, mora, and materials. Enter the weapon name first and refinement level from low-level to high-level. (refinement level range: 1 - 5) and then</span><code>:</code><span>. Note that refinement level is not REQUIRED (default is 1). So, you could just enter the weapon name and then </span><code>:</code><span>.  Then enter low level and high level, separated by </span><code>-</code><span>. Alternative/Informal name of weapons are supported. (Still most of them haha). All levels (1 - 90) are supported. All weapons(star 1 - 5) are supported. </span></p><ul><li><span>Example (wolf&#39;s gravestone, refinement level 2 - 5, 36 - 68): </span><code>/weaponcalc wolf&#39;s gravestone(2-5): 36 - 68</code></li><li><span>Example (WGS, informal abbrev. for wolf&#39;s gravestone, no refinement, 36 - 68): </span><code>/weaponcalc WGS: 36 - 68</code></li></ul></li><li><p><strong><span>talentcalc</span></strong><span>: Calculate the talent needed mora and ascension materials. Enter the name of the role first and then </span><code>:</code><span>, Then enter the skill that you want to check </span><u><span>(it could be at least 1 skill. It could also be multiple skills separated by</span></u><span> </span><code>,</code><span>) The skill (</span><code>A</code><span> means normal attack, </span><code>E</code><span> means elemental skill, </span><code>Q</code><span>  means elemental burst) should be followed by </span><code>=</code><span>, And after </span><code>=</code><span> is the low-level </span><code>-</code><span> high level that you want to check for this skill. All levels 1 - 10 are supported.</span></p><ul><li><span>A little bit complicated. But really nice to use. I will show you several examples for demonstration :-)</span></li><li><span>Example (diluc, only want to check elemental skill from lv. 2 to lv. 8): </span><code>/talentcalc diluc:E=2-8</code></li><li><span>Example (eula, normal attack 1 - 6, elemental burst 1 - 9): </span><code>/talentcalc eula: A= 1-6, Q = 1 - 9</code><span> (spaces are fine with Qiqi Bot)</span></li><li><span>Example (xingqiu, normal attack 1 - 6, elemental skill 2 - 9, elemental burst 3 - 10): </span><code>/talentcalc xingqiu: A = 1 - 6, E = 2 - 9, Q = 3 - 10</code></li></ul></li><li><p><strong><span>material</span></strong><span>: Show the information about this specific genshin impact material. (Currently supported all the materials related to characters and weapons). </span></p><ul><li><span>Example(philosophy of freedom): </span><code>/material philosophy of freedom</code></li></ul></li><li><p><strong><span>allroles</span></strong><span>: show all the characters that Qiqi supports at this moment! You could check roles with a specific element also by input the element after this command.</span></p><ul><li><span>Example(all characters): </span><code>/allroles</code></li><li><span>Example(cryo characters): </span><code>/allroles cryo</code></li></ul></li><li><p><strong><span>allweapons</span></strong><span>: show all the weapons that Qiqi supports at this moment! You could check weapons with a specific </span><strong><span>stars</span></strong><span> or </span><strong><span>weapon type</span></strong><span>.</span></p><ul><li><span>Example(all weapons): </span><code>/allweapons</code></li><li><span>Example(4-star weapons): </span><code>/allweapons 4</code></li><li><span>Example(catalyst weapons): </span><code>/allweapons catalyst</code></li></ul></li><li><p><strong><span>allmaterials</span></strong><span>: show all the materials that Qiqi supports at this moment!</span></p><ul><li><span>Example: </span><code>/allmaterials</code></li></ul></li><li><p><strong><span>dbupdate</span></strong><span>: check the update progress of Qiqi Genshin Impact database!</span></p><ul><li><span>Example: </span><code>/dbupdate</code></li></ul></li></ul><p>&nbsp;</p><h4 id='music-commands'><span>Music Commands</span></h4><hr /><p><span>	</span><span>Music commands are new to Qiqi Bot. It can play the music by YouTube video url or searching by keywords. If you search the music by keywords, Qiqi will return you 5 choices for you to choose. Isn&#39;t that nice?</span></p><ul><li><p><strong><span>play</span></strong><span>: Qiqi will join your voice channel and play the music. You can directly play:</span></p><ul><li><p><strong><span>YouTube video url or search by keywords</span></strong><span>:</span></p><ul><li><span>Example(YouTube by url): </span><code>/play https://www.youtube.com/watch?v=mWRsgZuwf_8</code><span>  (</span><u><span>please don&#39;t forget the https:// for url</span></u><span>)</span></li><li><span>Example(YouTube by keywords): </span><code>/play demons imagine dragons</code><span> and Qiqi will return your 5 choices. Then you could simply enter number </span><code>1-5</code><span> to choose the track (You don&#39;t need to enter </span><code>play</code><span> again for choosing).</span></li></ul></li><li><p><strong><span>bilibili video url or video id (av or bv)</span></strong><span>:</span></p><ul><li><span>Example(Bilibili by url): </span><code>/play https://www.bilibili.com/video/BV18X4y1N7Yh</code></li><li><span>Example(Bilibili by video-id): </span><code>/play BV18X4y1N7Yh</code></li></ul></li></ul></li><li><p><strong><span>join</span></strong><span>: Qiqi will join your voice channel. </span></p><ul><li><span>Example: </span><code>/join</code></li></ul></li><li><p><strong><span>leave</span></strong><span>: Qiqi will leave your voice channel.</span></p><ul><li><span>Example: </span><code>/leave</code></li></ul></li><li><p><strong><span>pause</span></strong><span>: Qiqi will pause the music if it is playing at this moment.</span></p><ul><li><span>Example: </span><code>/pause</code></li></ul></li><li><p><strong><span>unpause</span></strong><span>: Qiqi will unpause the music if it is paused.</span></p><ul><li><span>Example: </span><code>/unpause</code></li></ul></li><li><p><strong><span>stop</span></strong><span>: Qiqi will remove all tracks in the queue and leave the voice channel.</span></p><ul><li><span>Example: </span><code>/stop</code></li></ul></li><li><p><strong><span>skip</span></strong><span>: Qiqi will skip the track(s) by 4 different ways.</span></p><ul><li><span>Example(skip the current playing one): </span><code>/skip</code></li><li><span>Example(skip the specific nth track, n is a number): </span><code>/skip n</code></li><li><span>Example(skip the specific range of tracks, x and y are numbers): </span><code>/skip x-y</code></li><li><span>Example(skip all the tracks queued by a specific user): </span><code>/skip @user</code></li></ul></li><li><p><strong><span>queue</span></strong><span>: Qiqi will show you the current queue.</span></p><ul><li><span>Example: </span><code>/queue</code></li></ul></li><li><p><strong><span>jump</span></strong><span>: Qiqi will jump your selected song to the top one in the waitlist. By using the number of the selected song in the queue to jump the song. </span></p><ul><li><strong><span>If there is no song playing, Qiqi will jump the song to the #1. Otherwise, Qiqi will jump the song to #2, which will be played next after the currently playing one.</span></strong></li><li><span>Example: </span><code>/jump 5</code><span> (jump #5 song in the queue to the top one in the waitlist)</span></li></ul></li><li><p><strong><span>shuffle</span></strong><span>: Qiqi will shuffle the all songs (</span><strong><span>except currently playing one if applicable</span></strong><span>) in the queue. (Mechanism similar to function </span><code>jump</code><span>)</span></p><ul><li><span>Example: </span><code>/shuffle</code></li></ul></li><li><p><strong><span>repeat</span></strong><span>: Qiqi can repeat a the current playing track (song) for you. If the bot is not playing at this moment, Qiqi will set the first song in the queue to be repeated. You could also turn the repeat off by this command.</span></p><ul><li><span>Example(repeat a single song): </span><code>/repeat single</code></li><li><span>Example(repeat off): </span><code>/repeat off</code></li></ul></li></ul><p>&nbsp;</p><h4 id='fun-commands'><span>Fun Commands </span></h4><hr /><p><span>	</span><span>Fun commands are open to everyone in the server except the muted users. All the user commands have no restricted permissions. More commands are coming soon. And please contact me to brainstorm more ideas. Have Fun!</span></p><ul><li><p><strong><span>8ball</span></strong><span>: Ask Qiqi a question and Qiqi will answer you with her idea!</span></p><ul><li><span>Example: </span><code>/8ball is Qiqi happy today?</code></li></ul></li><li><p><strong><span>ping</span></strong><span>: Ping to Qiqi to test the latency to Qiqi.</span></p><ul><li><span>Example: </span><code>/ping</code></li></ul></li><li><p><strong><span>bmi</span></strong><span>: Calculate BMI result based on weight and height. The default input unit system is metrics. You could specify English(ft., inch, pound ) system by entering </span><code>=english</code><span>.  Enter weight first and then enter the height. You could also specify BMI standard in the end. The default standard is WHO standard if no standard specified in the input. </span></p><ul><li><span>Example (70kg, 1.78m, default WHO standard): </span><code>/bmi 70, 1.78</code></li><li><span>Example (English system, 200 pounds, 6 ft 8 in, Japan standard): </span><code>/bmi =english 200, 6&#39;8&quot;, Japan</code><span> </span></li><li><span>Supported Standards: WHO, China, HongKong, Singapore, Japan.</span></li></ul></li><li><p><strong><span>calcgpa</span></strong><span>: Qiqi will calculate GPA for you based on your input academic scores and credits. </span><u><span>Your message will be deleted immediately right after you sent to protect your privacy. And the result will be sent to you by DIRECT message.</span></u><span> (Privacy Protection)</span></p><ul><li><span>It has two modes: different or same credits for classes. (All classes have the same credits if you choose same credit modes by entering </span><code>=credit</code><span>)</span></li><li><span>3 grade formats are supported: letter grade like </span><code>B+</code><span>, score points like</span><code>93.5</code><span>, GPA grade(by putting word &quot;gpa&quot; after the grade </span><code>3.7gpa</code><span>)</span></li><li><span>if you have different credits for classes. Enter </span><code>credits:grade</code><span> and separates classes by </span><code>,</code></li><li><span>Example (different credits for classes): </span><code>/calcgpa 5.0:95, 4:A-, 2.0: 2.7GPA</code><span> (5 credit course with 95 and 4 credit course with A-, 2 credit course with 2.7GPA)</span></li><li><span>Example (same credits for classes): </span><code>/calcgpa =credit A-, 93,  2.7GPA</code><span> (three same credits class with grade A-, 93, and 2.7GPA)</span></li></ul></li><li><p><strong><span>choose</span></strong><span>: Give possible amounts of choices to Qiqi and Qiqi will pick one for you. It sometimes help people with allodoxaphobia a lot! But remember to </span><u><span>separate your choices by semicolon</span></u><span> </span><code>;</code></p><ul><li><span>Example: </span><code>/choose hamburger; sandwich; noodles; fried-chicken; noodles; pizza</code></li></ul></li><li><p><strong><span>echo</span></strong><span>: Qiqi would definitely repeat what you just said!</span></p><ul><li><span>Example: </span><code>/echo Hello!</code></li></ul></li><li><p><strong><span>eightball</span></strong><span> (or _8ball, 8ball): It asks a specific question to Qiqi and Qiqi will give her answer back.</span></p><ul><li><span>Example: </span><code>/eightball Is Qiqi happy today?</code></li></ul></li><li><p><strong><span>gpascale</span></strong><span>: Qiqi will show you the GPA scale.</span></p><ul><li><span>Example: </span><code>/gpascale</code></li></ul></li><li><p><strong><span>update</span></strong><span>: See brief reports about recent updates and versions about Qiqi Bot</span></p><ul><li><span>Example: </span><code>/update</code></li></ul></li><li><p><strong><span>userinfo</span></strong><span>: Check the user profile by @user.</span></p><ul><li><span>Example: </span><code>/userinfo @user</code></li></ul></li><li><p><strong><span>policy</span></strong><span>: Check out the policy rules, explanations, and statements that Qiqi follows and how Qiqi protects your privacy when using it!</span></p><ul><li><span>Example: </span><code>/policy</code></li></ul></li><li><p><strong><span>credits</span></strong><span>: credits about Qiqi Bot.</span></p><ul><li><span>Example: </span><code>/credits</code></li></ul></li><li><p><strong><span>paimon</span></strong><span>: Only Paimon knows what this command is about. Qiqi forgot.</span></p></li></ul><p>&nbsp;</p><h4 id='admin-commands'><span>Admin Commands</span></h4><hr /><p><span>	</span><span>Admin commands are designed for the convenience for managing server. In order to use managing commands, users need different permissions based on commands.</span></p><ul><li><p><strong><span>ban</span></strong><span>: ban a user from the server. </span><strong><span>Permission </span><code>ban_member</code><span> is needed</span></strong><span>.</span></p><ul><li><span>Example: </span><code>/ban @user</code></li></ul></li><li><p><strong><span>unban</span></strong><span>: unban a user from the server. </span><strong><span>Permission </span><code>ban_member</code><span> is needed.</span></strong></p><ul><li><span>Example: </span><code>/unban @user</code></li></ul></li><li><p><strong><span>clear</span></strong><span>: Qiqi will clear specific amount of message. </span><strong><span>Permission </span><code>manage_messages</code><span> is needed</span></strong><span>.</span></p><ul><li><span>Example(clear 10 closest messages in the current chat history): </span><code>/clear 10</code></li></ul></li><li><p><strong><span>changeprefix</span></strong><span>: Qiqi will change the prefix of the server. </span><strong><span>Permission </span><code>manage_message</code><span> is needed.</span></strong></p><ul><li><span>Example(change prefix to &quot;q!&quot; from &quot;/&quot;): </span><code>/changeprefix q!</code></li></ul></li><li><p><strong><span>kick</span></strong><span>: Qiqi will kick the member out of the server. </span><strong><span>Permission </span><code>kick_member</code><span> is needed.</span></strong></p><ul><li><span>Example: </span><code>/kick @user optional:reason</code></li></ul></li></ul><p>&nbsp;</p><h3 id='faq'><span>FAQ</span></h3><hr /><ol start='' ><li><p><strong><span>Why the bot fails to invite to my server?</span></strong></p><p><span>Don&#39;t rush to give a bad review please. The bot is applied to discord for verification. Before the verification is done, the bot can only add up to 75 servers. You could join the Qiqi Bot server to know the newest update and invite link.</span></p></li><li><p><strong><span>Why the bot may sometime unresponding?</span></strong></p><p><span>This may due to the reasons that the the developer is modifying the bot configuration on the backside. Usually, this won&#39;t take a long time.</span></p></li><li><p><strong><span>I forgot my bot prefix?</span></strong></p><p><span>You could always @ the bot in the text channel, then bot will return the current prefix that your server set. (</span><em><span>P.S: This may change after April, 2022 if slash command is mandatory.</span></em><span>)</span></p></li><li><p><strong><span>Why Qiqi told me that I sent commands too fast?</span></strong></p><p><span>Qiqi will detect the frequency of a user entering commands. If the user sends it too fast, Qiqi will set a cooldown for him to cool him down! Except policy and credits command, Qiqi will not set a cooldown for users with normal frequency. (The cooldown is just used for preventing spam).</span></p></li><li><p><strong><span>How can I know the latest update and new features?</span></strong></p><p><span>You could join the Qiqi Bot Support Server. Here is the link</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.5px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">https://discord.gg/gbv6TveBRX</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre></li></ol><p>&nbsp;</p><h3 id='policy-statement'><span>Policy Statement</span></h3><hr /><ul><li><p><strong><span>General Policy</span></strong></p><ul><li><span>Due to privacy importance and corresponding concerns, Qiqi Bot (later in the text as </span><span>&quot;</span><span>Bot</span><span>&quot;</span><span>) is designed with the theme of protecting user personal information.</span></li><li><span>Bot will NEVER re-use or sell personal data from any user to any person/company/platform. Bot will strictly follow the rules and community guidelines of discord.</span></li><li><strong><span>IMPORTANT</span></strong><span>: Bot will NEVER ask you about payments, credit card information, social security number, and other financial information. Beware of the fraud. Again, Bot will NEVER ask you anything about your financial info of any kind.</span></li></ul></li><li><p><strong><span>Possible Privacy Exposure</span></strong></p><ul><li><span>For Qiqi Bot (Later as </span><span>&quot;</span><span>Bot</span><span>&quot;</span><span>), it is possible to have privacy leak by using fun commands: </span><code>bmi</code><span> and </span><code>calcgpa</code><span> though the chance is extremely low.</span></li><li><span>After user sending the input, bot will immediately delete the input message by its message ID. Therefore, the message will be deleted for sure.</span></li><li><strong><span>But, there is still chance that </span><span>&quot;</span><span>someone with concealed intentions</span><span>&quot;</span><span> records the channel, then they could find that message by searching specific frame of screen-recording.</span></strong></li><li><span>By warning this in here, Bot, also developer, will not be responsible for any personal information leak by above circumstance. </span></li><li><strong><span>In a short word, BEWARE of USING FUN COMMANDS </span><code>bmi</code><span> and </span><code>calcgpa</code></strong></li></ul></li><li><p><strong><span>User Agreement</span></strong></p><ul><li><strong><span>User MUST NOT process with any illegal affairs by Qiqi Bot.</span></strong><span> Qiqi Bot will preserve rights and use any illegal activity by user to proceed to lawsuit.</span></li><li><span>Please use Qiqi Bot in legitimate ways.</span></li></ul></li><li><p><strong><span>Final Explanation</span></strong></p><ul><li><span>Developer Master_30#0361 has reserved all the right for the final interpretation of Qiqi Bot.</span></li></ul></li></ul><p>&nbsp;</p><h3 id='version-tracker'><span>Version Tracker</span></h3><hr /><p><span>	</span><span>Version tracker will display all the versions of Qiqi Bot except minor/bug fixes update before Version </span><code>Beta 0.3.0.0</code><span>. Also, bot developer is preparing to move Qiqi Bot to a more stable release Version </span><code>1.0.0.0</code><span>. (Not too far away).</span></p><p><span>P.S: Version Tracker will not include all the versions during development stage. It will record the stable release version only.</span></p><figure><table><thead><tr><th><span>Version No.</span></th><th><span>Updated Time (MM/DD/YYYY)</span></th><th><span>Update Detailed Info</span></th></tr></thead><tbody><tr><td><code>0.5.1.0</code></td><td><span>12/19/2021</span></td><td><span>Heading to </span><code>1.0.0.0</code><span>. Migrating to new cloud service | Added userinfo function</span></td></tr><tr><td><code>0.4.1.4</code></td><td><span>12/18/2021</span></td><td><span>Updated site-packages info </span><span>|</span><span> Added response message for repeat function </span><span>|</span><span> Fixed counting error in jump function response message</span></td></tr><tr><td><code>0.4.1.1</code></td><td><span>12/18/2021</span></td><td><span>Updated Genshin DB to game version 2.3 </span><span>|</span><span> Fixed @ bug on error handler</span></td></tr><tr><td><code>0.4.0.0</code></td><td><span>12/17/2021</span></td><td><span>Added music repeat (single only), policy, credits </span><span>|</span><span> Enhanced user experience and lower down spamming possibilities </span><span>|</span><span> Fixed minor bugs</span></td></tr><tr><td><code>0.3.3.2</code></td><td><span>12/16/2021</span></td><td><span>Fixed Typos of Bot repsonses</span></td></tr><tr><td><code>0.3.3.1</code></td><td><span>12/16/2021</span></td><td><span>Added developer functions</span></td></tr><tr><td><code>0.3.3.0</code></td><td><span>12/16/2021</span></td><td><span>Added support to website Bilibili for music</span></td></tr><tr><td><code>0.3.2.7</code></td><td><span>12/15/2021</span></td><td><span>Updated prefixes not found with default prefix setting</span></td></tr><tr><td><code>0.3.2.5</code></td><td><span>12/15/2021</span></td><td><span>Stop responding with error message if command not found</span></td></tr><tr><td><code>0.3.2.4</code></td><td><span>12/13/2021</span></td><td><span>Added music jump and shuffle</span></td></tr><tr><td><code>0.3.0.1</code></td><td><span>12/12/2021</span></td><td><span>Fixed incorrect message response if timeout</span></td></tr><tr><td><code>0.3.0.0</code></td><td><span>12/11/2021</span></td><td><span>Genshin Impact / Music function published</span></td></tr><tr><td><code>0.2.0.0</code></td><td><span>11/20/2021</span></td><td><span>Genshin Impact function completed. </span><strong><span>not published</span></strong></td></tr><tr><td><code>0.1.6.0</code></td><td><span>09/27/2021</span></td><td><span>Cog Restructure completed. </span><strong><span>not published</span></strong></td></tr><tr><td><code>0.1.0.0</code></td><td><span>05/13/2021</span></td><td><span>Initial combined version. </span><strong><span>not published</span></strong></td></tr></tbody></table></figure><p>&nbsp;</p><h3 id='contact'><span>Contact</span></h3><hr /><ul><li><span>Email (developer): </span><a href='mailto:qiqibot77@gmail.com' target='_blank' class='url'>qiqibot77@gmail.com</a></li><li><span>Discord Bot Support Server: </span><a href='https://discord.gg/gbv6TveBRX' target='_blank' class='url'>https://discord.gg/gbv6TveBRX</a></li><li><span>Discord ID (Developer): Master_30#0361</span></li></ul><p>&nbsp;</p><p>&nbsp;</p></div></div>
+
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script></body>
+</html>
