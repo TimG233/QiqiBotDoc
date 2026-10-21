@@ -1,0 +1,18 @@
+
+/* Phycat Mint - Shared fonts for Qiqi Bot documentation */
+
+@font-face {
+    font-family: "LXGW WenKai";
+    src: url("../fonts/LXGWWenKai-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "CascadiaCode";
+    src: url("../fonts/Cascadia-Code-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}

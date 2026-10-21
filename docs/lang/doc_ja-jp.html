@@ -1,0 +1,2515 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+img:not([height]) { height: auto; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+svg sub, svg sup { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignobject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<style type='text/css'  id="style-theme_css">html {
+    font-size: 16px;
+    font-family: "LXGW WenKai"
+}
+
+#write {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 15px;
+    line-height: 2.25;
+    color: #000;
+    letter-spacing: 1.1px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: left;
+    position: relative;
+    z-index: 0
+}
+
+#write::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-color: var(--element-color);
+    opacity: .12;
+    -webkit-mask-image: var(--bg-style);
+    mask-image: var(--bg-style);
+    -webkit-mask-size: 20px 20px;
+    mask-size: 20px 20px;
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-position: center;
+    mask-position: center
+}
+
+#write p {
+    color: #333;
+    margin: 10px 10px;
+    font-family: Optima-Regular, Optima, "LXGW WenKai", PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 1rem;
+    word-spacing: 2px
+}
+
+#write h3.md-heading:after,
+h4.md-heading:after,
+h5.md-heading:after,
+h6.md-heading:after {
+    content: " ";
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    margin-left: -2px;
+    background-color: var(--element-color-shallow);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 24px 24px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 24px 24px
+}
+
+#write h3.md-heading:after {
+    -webkit-mask-image: var(--h3-icon-shape);
+    mask-image: var(--h3-icon-shape)
+}
+
+#write h4.md-heading:after {
+    -webkit-mask-image: var(--h4-icon-shape);
+    mask-image: var(--h4-icon-shape)
+}
+
+#write h5.md-heading:after {
+    -webkit-mask-image: var(--h5-icon-shape);
+    mask-image: var(--h5-icon-shape)
+}
+
+#write h6.md-heading:after {
+    -webkit-mask-image: var(--h6-icon-shape);
+    mask-image: var(--h6-icon-shape)
+}
+
+#write h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1em auto .8em;
+    line-height: 1.4;
+    width: fit-content;
+    min-width: 120px;
+    min-height: 1.4em;
+    color: #222;
+    position: relative;
+    padding-bottom: 12px;
+    transition: color .3s ease, transform .3s ease;
+    border-bottom: none
+}
+
+#write h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--head-title-h2-background);
+    background-size: 100% auto;
+    transform: translateX(-50%);
+    transition: width .4s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h1:not(.md-focus):hover {
+    color: var(--head-title-color);
+    transform: translateY(-2px)
+}
+
+#write h1.md-focus::after,
+#write h1:focus::after,
+#write h1:hover::after {
+    width: 100%
+}
+
+#write h2 {
+    color: var(--head-title-h2-color);
+    font-size: 1.4rem;
+    line-height: 1.5;
+    width: fit-content;
+    font-weight: 700;
+    margin: 20px 0;
+    padding: 5px 12px;
+    border-radius: 8px;
+    background: var(--head-title-h2-background);
+    background-size: 200% auto;
+    background-position: 0 center;
+    box-shadow: 0 2px 5px rgba(61, 184, 211, .15);
+    transition: background-position .5s ease-out, transform .4s ease, box-shadow .4s ease
+}
+
+#write h2:hover {
+    background-position: 100% center;
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(61, 184, 211, .35)
+}
+
+#write h3 {
+    position: relative;
+    width: fit-content;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 1.3rem;
+    padding-left: 10px;
+    transition: all .3s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h3 {
+    position: relative;
+    width: fit-content;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 1.3rem;
+    padding-left: 10px;
+    transition: all .3s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h3::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 61%;
+    border-radius: 4px;
+    background-color: var(--head-title-color);
+    transition: all .3s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h3 span {
+    border-bottom: 2px hidden var(--head-title-color);
+    transition: color .3s ease
+}
+
+#write h3:hover {
+    padding-left: 18px;
+    color: var(--head-title-color);
+    cursor: pointer
+}
+
+#write h3:hover::before {
+    height: 66%;
+    background-color: var(--head-title-color);
+    width: 7px
+}
+
+#write h4,
+#write h5,
+#write h6 {
+    transition: color .3s ease, transform .3s ease
+}
+
+#write h4::before,
+#write h5::before,
+#write h6::before {
+    transition: all .3s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+#write h4 {
+    margin: 20px 0;
+    font-size: 1.15rem;
+    text-align: left
+}
+
+#write h4::before {
+    content: "";
+    margin-right: 7px;
+    display: inline-block;
+    background-color: var(--head-title-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: var(--head-title-color) 1px solid;
+    vertical-align: inherit
+}
+
+#write h4:hover::before {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 4px var(--element-color-soo-shallow)
+}
+
+#write h5 {
+    margin: 23px 0;
+    font-size: 1.1rem;
+    text-align: left
+}
+
+#write h5::before {
+    content: "";
+    margin-right: 7px;
+    display: inline-block;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: var(--head-title-color) 2px solid;
+    vertical-align: inherit;
+    box-sizing: border-box
+}
+
+#write h5:hover::before {
+    background-color: var(--head-title-color);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 3px var(--element-color-soo-shallow)
+}
+
+#write h6 {
+    margin: 23px 0;
+    font-size: 1.1rem;
+    text-align: left
+}
+
+#write h6::before {
+    content: "-";
+    color: var(--head-title-color);
+    margin-right: 7px;
+    display: inline-block;
+    vertical-align: inherit
+}
+
+#write h6:hover::before {
+    transform: scaleX(1.8) translateX(1px);
+    font-weight: 700
+}
+
+#write h4:hover,
+#write h5:hover,
+#write h6:hover {
+    color: var(--element-color-deep);
+    transform: translateX(6px)
+}
+
+#write {
+    counter-reset: h1
+}
+
+h1 {
+    counter-reset: h2
+}
+
+h2 {
+    counter-reset: h3
+}
+
+h3 {
+    counter-reset: h4
+}
+
+h4 {
+    counter-reset: h5
+}
+
+h5 {
+    counter-reset: h6
+}
+
+.sidebar-content {
+    counter-reset: h1
+}
+
+.outline-content {
+    counter-reset: h1
+}
+
+.outline-h1 {
+    counter-reset: h2
+}
+
+.outline-h2 {
+    counter-reset: h3
+}
+
+.outline-h3 {
+    counter-reset: h4
+}
+
+.outline-h4 {
+    counter-reset: h5
+}
+
+.outline-h5 {
+    counter-reset: h6
+}
+
+.md-toc-content {
+    counter-reset: h1toc
+}
+
+.md-toc-h1 {
+    counter-reset: h2toc
+}
+
+.md-toc-h2 {
+    counter-reset: h3toc
+}
+
+.md-toc-h3 {
+    counter-reset: h4toc
+}
+
+.md-toc-h4 {
+    counter-reset: h5toc
+}
+
+.md-toc-h5 {
+    counter-reset: h6toc
+}
+
+#write h1:before {
+    counter-increment: h1;
+    content: var(--autonum-h1)
+}
+
+#outline-content li.outline-h1>div>span.outline-label:before {
+    counter-increment: h1;
+    content: var(--autonum-h1)
+}
+
+.outline-content .outline-h1>.outline-item>.outline-label:before {
+    counter-increment: h1;
+    content: var(--autonum-h1)
+}
+
+#write span.md-toc-item.md-toc-h1>a:before {
+    counter-increment: h1toc;
+    content: var(--autonum-h1toc)
+}
+
+#write h2:before {
+    counter-increment: h2;
+    content: var(--autonum-h2);
+    color: var(--head-title-h2-color)
+}
+
+.outline-content .outline-h2>.outline-item>.outline-label:before {
+    counter-increment: h2;
+    content: var(--autonum-h2)
+}
+
+li.outline-h2>div>a.outline-label:before {
+    counter-increment: h2;
+    content: var(--autonum-h2)
+}
+
+#write span.md-toc-item.md-toc-h2>a:before {
+    counter-increment: h2toc;
+    content: var(--autonum-h2toc)
+}
+
+#write h3>span:first-of-type::before {
+    counter-increment: h3;
+    content: var(--autonum-h3);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h3>div>span.outline-label:before {
+    counter-increment: h3;
+    content: var(--autonum-h3)
+}
+
+.outline-content .outline-h3>.outline-item>.outline-label:before {
+    counter-increment: h3;
+    content: var(--autonum-h3)
+}
+
+#write span.md-toc-item.md-toc-h3>a:before {
+    counter-increment: h3toc;
+    content: var(--autonum-h3toc)
+}
+
+#write h4>span:first-of-type::before {
+    counter-increment: h4;
+    content: var(--autonum-h4);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h4>div>span.outline-label:before {
+    counter-increment: h4;
+    content: var(--autonum-h4)
+}
+
+.outline-content .outline-h4>.outline-item>.outline-label:before {
+    counter-increment: h4;
+    content: var(--autonum-h4)
+}
+
+#write span.md-toc-item.md-toc-h4>a:before {
+    counter-increment: h4toc;
+    content: var(--autonum-h4toc)
+}
+
+#write h5>span:first-of-type::before {
+    counter-increment: h5;
+    content: var(--autonum-h5);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h5>div>span.outline-label:before {
+    counter-increment: h5;
+    content: var(--autonum-h5)
+}
+
+.outline-content .outline-h5>.outline-item>.outline-label:before {
+    counter-increment: h5;
+    content: var(--autonum-h5)
+}
+
+#write span.md-toc-item.md-toc-h5>a:before {
+    counter-increment: h5toc;
+    content: var(--autonum-h5toc)
+}
+
+#write h6>span:first-of-type::before {
+    counter-increment: h6;
+    content: var(--autonum-h6);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h6>div>span.outline-label:before {
+    counter-increment: h6;
+    content: var(--autonum-h6)
+}
+
+.outline-content .outline-h6>.outline-item>.outline-label:before {
+    counter-increment: h6;
+    content: var(--autonum-h6)
+}
+
+#write span.md-toc-item.md-toc-h6>a:before {
+    counter-increment: h6toc;
+    content: var(--autonum-h6toc)
+}
+
+::marker {
+    color: var(--element-color-deep)
+}
+
+li.md-list-item {
+    margin: .4rem 0
+}
+
+#write ol,
+#write ul {
+    margin-top: 0;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    padding-left: 13px
+}
+
+#write em {
+    padding: 0 3px 0 0
+}
+
+#write ul {
+    list-style-type: disc
+}
+
+#write ul ul {
+    list-style-type: circle
+}
+
+#write ul ul ul {
+    list-style-type: square
+}
+
+#write ol {
+    list-style-type: decimal
+}
+
+#write ol ol {
+    list-style-type: lower-alpha
+}
+
+#write ol ol ol {
+    list-style-type: lower-roman
+}
+
+#write li section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.7rem;
+    text-align: justify;
+    color: #000;
+    font-weight: 500
+}
+
+#write li:before {
+    content: "";
+    height: calc(100% - 45px);
+    top: 35px;
+    position: absolute;
+    border-left: .5px solid var(--element-color);
+    left: -12.5px
+}
+
+#write .task-list-item input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.3rem;
+    height: 1.3rem;
+    position: absolute;
+    top: 3px;
+    left: -22px;
+    outline: 0;
+    cursor: pointer;
+    z-index: 1
+}
+
+#write .task-list-item input::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: 18px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--element-color-deep, #ffa531);
+    background: #fff;
+    transition: all .4s cubic-bezier(.5, 1.6, .4, .7);
+    box-sizing: border-box
+}
+
+#write .task-list-item input::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 138%;
+    width: .35rem;
+    height: .65rem;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: translate(-50%, -60%) rotate(45deg) scale(1);
+    transition: all .3s cubic-bezier(.5, 1.6, .4, .7);
+    opacity: 0
+}
+
+#write .task-list-item input:checked::before {
+    background: var(--element-color, #ffc000);
+    border-color: var(--element-color, #ffc000);
+    transform: scale(1.05);
+    animation: task-pulse .4s forwards
+}
+
+@keyframes task-pulse {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.15)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+#write .task-list-item input:checked::after {
+    opacity: 1;
+    transform: translate(-50%, -60%) rotate(45deg) scale(1)
+}
+
+#write .task-list-item input[type=checkbox]+p,
+#write .task-list-item input[type=checkbox]+span {
+    position: relative;
+    display: inline;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: color .4s ease;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 50%;
+    background-size: 0 1.5px;
+    background-repeat: no-repeat;
+    transition: background-size .4s cubic-bezier(.25, .8, .25, 1), color .4s ease
+}
+
+#write .task-list-item input[type=checkbox]:checked+p,
+#write .task-list-item input[type=checkbox]:checked+span {
+    color: #bbb;
+    background-size: 100% 1.5px
+}
+
+#write .task-list-item input[type=checkbox]:checked+p>em,
+#write .task-list-item input[type=checkbox]:checked+p>span,
+#write .task-list-item input[type=checkbox]:checked+p>strong {
+    color: inherit
+}
+
+#write blockquote {
+    position: relative;
+    margin: 20px 0;
+    padding: 18px 20px 18px 48px;
+    background-color: var(--element-color-soo-shallow);
+    border: none;
+    border-radius: 16px;
+    color: #555;
+    line-height: 1.6;
+    transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), background-color .3s ease
+}
+
+#write blockquote::before {
+    content: "✨";
+    position: absolute;
+    left: 16px;
+    top: 18px;
+    font-size: 20px;
+    line-height: 1;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif
+}
+
+#write blockquote p {
+    color: #555;
+    margin-bottom: .5em
+}
+
+#write blockquote p:last-child {
+    margin-bottom: 0
+}
+
+#write blockquote:hover {
+    transform: scale(1.02)
+}
+
+#write a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 2px 4px;
+    margin: 0 -2px;
+    border-radius: 4px;
+    background: 0 0;
+    border-bottom: none;
+    transition: all .2s ease
+}
+
+#write p a:not(.md-toc-inner)::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 2px;
+    vertical-align: -.15em;
+    background-color: var(--element-color);
+    -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath d='M477.934459 330.486594A50.844091 50.844091 0 0 1 406.752731 258.796425L512 152.532274a254.220457 254.220457 0 0 1 359.467726 359.467726L762.66137 618.772592a50.844091 50.844091 0 1 1-71.690168-71.690169l106.772591-106.772592a152.532274 152.532274 0 0 0-215.578947-215.578947z m70.164846 361.501489A50.844091 50.844091 0 1 1 619.789474 762.66137l-107.281033 107.281033A254.220457 254.220457 0 0 1 152.532274 512L259.813307 406.752731a50.844091 50.844091 0 1 1 72.19861 69.656405l-107.789474 107.281033a152.532274 152.532274 0 0 0 215.578947 215.578947z m-126.601788-16.77855a50.844091 50.844091 0 1 1-71.690168-71.690169l251.678252-251.678252a50.844091 50.844091 0 0 1 71.690169 71.690169z'/%3E%3C/svg%3E") no-repeat center/contain;
+    mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath d='M477.934459 330.486594A50.844091 50.844091 0 0 1 406.752731 258.796425L512 152.532274a254.220457 254.220457 0 0 1 359.467726 359.467726L762.66137 618.772592a50.844091 50.844091 0 1 1-71.690168-71.690169l106.772591-106.772592a152.532274 152.532274 0 0 0-215.578947-215.578947z m70.164846 361.501489A50.844091 50.844091 0 1 1 619.789474 762.66137l-107.281033 107.281033A254.220457 254.220457 0 0 1 152.532274 512L259.813307 406.752731a50.844091 50.844091 0 1 1 72.19861 69.656405l-107.789474 107.281033a152.532274 152.532274 0 0 0 215.578947 215.578947z m-126.601788-16.77855a50.844091 50.844091 0 1 1-71.690168-71.690169l251.678252-251.678252a50.844091 50.844091 0 0 1 71.690169 71.690169z'/%3E%3C/svg%3E") no-repeat center/contain;
+    transition: transform .4s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write a:not(.md-toc-inner):hover {
+    color: var(--element-color-deep);
+    background: var(--element-color-soo-shallow)
+}
+
+#write a:hover:not(.md-toc-inner)::before {
+    transform: rotate(180deg);
+    background-color: var(--element-color-deep)
+}
+
+#write a:visited {
+    color: var(--element-color-deep)
+}
+
+#write sup a::before {
+    content: none
+}
+
+#write mark {
+    background-color: transparent;
+    color: inherit;
+    padding: 0 2px;
+    margin: 0;
+    border-radius: 4px;
+    font-weight: inherit;
+    position: relative;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    background-image: linear-gradient(to top, var(--element-color-so-shallow), var(--element-color-so-shallow));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 40%;
+    transition: background-size .3s cubic-bezier(.34, 1.56, .64, 1), color .3s ease, border-radius .3s ease
+}
+
+#write mark::after,
+#write mark::before {
+    content: none !important;
+    display: none !important
+}
+
+#write mark:hover {
+    background-size: 100% 100%;
+    border-radius: 6px
+}
+
+#write mark strong {
+    color: var(--element-color-deep)
+}
+
+#write mark:hover strong {
+    color: var(--element-color-deep);
+    text-shadow: none
+}
+
+#write strong {
+    color: var(--element-color);
+    font-weight: 700;
+    display: inline;
+    position: relative;
+    border-bottom: 2px solid transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: border-color .3s ease, color .3s ease, text-shadow .3s ease
+}
+
+#write strong:hover {
+    color: var(--element-color);
+    border-bottom-color: var(--element-color-shallow);
+    text-shadow: 0 2px 8px var(--element-color-so-shallow)
+}
+
+#write mark:hover strong {
+    color: #fff;
+    text-shadow: none;
+    transform: translateY(-2px) scale(1.1)
+}
+
+@keyframes stitchFlow {
+    from {
+        background-position-x: 0
+    }
+
+    to {
+        background-position-x: 6px
+    }
+}
+
+#write em {
+    font-style: italic;
+    color: #555;
+    text-decoration: none !important;
+    padding: 0 2px 1px;
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    background-size: 6px 3px;
+    background-image: linear-gradient(-45deg, transparent 35%, var(--element-color-shallow) 35%, var(--element-color-shallow) 65%, transparent 65%);
+    transition: color .2s ease, -webkit-text-stroke .2s ease, background-image .2s ease;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    position: relative;
+    z-index: 0
+}
+
+#write em::after {
+    content: none !important;
+    display: none !important
+}
+
+#write em:hover {
+    color: var(--element-color);
+    font-weight: 400;
+    -webkit-text-stroke: .5px var(--element-color);
+    background-image: linear-gradient(-45deg, transparent 35%, var(--element-color) 35%, var(--element-color) 65%, transparent 65%);
+    animation: stitchFlow .5s linear infinite
+}
+
+#write del {
+    text-decoration: line-through;
+    text-decoration-color: var(--element-color);
+    color: #999;
+    transition: all .3s ease
+}
+
+#write del:hover {
+    opacity: .6;
+    text-decoration-color: var(--element-color-deep);
+    cursor: not-allowed
+}
+
+#write hr {
+    border: none;
+    border-top: 3px dashed var(--element-color-shallow);
+    margin: 30px 0;
+    opacity: .6;
+    transform: scaleX(.8);
+    transition: all .4s ease
+}
+
+#write hr:hover {
+    transform: scaleX(1);
+    border-color: var(--element-color);
+    opacity: 1
+}
+
+#write p:has(img) {
+    text-align: center
+}
+
+#write img {
+    border-radius: 12px;
+    display: inline-block;
+    margin: 15px 5px;
+    object-fit: contain;
+    filter: brightness(1) contrast(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .05);
+    transition: all .4s cubic-bezier(.34, 1.56, .64, 1);
+    max-width: 100%;
+    cursor: zoom-in
+}
+
+#write p>img:only-child {
+    display: block;
+    margin: 20px auto
+}
+
+#write img:hover {
+    filter: brightness(1.05) contrast(1.05);
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px -4px var(--element-color-soo-shallow);
+    z-index: 10
+}
+
+#write figcaption {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+    line-height: 1.5;
+    transition: color .3s ease
+}
+
+#write figure:hover>figcaption,
+#write p:hover>img+figcaption {
+    color: var(--element-color-deep)
+}
+
+pre.md-meta-block {
+    padding: 30px 20px 20px;
+    margin: 20px 0;
+    font-family: var(--monospace);
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    background-color: var(--element-color-soo-shallow);
+    border: 1.5px dashed var(--element-color);
+    border-radius: 8px;
+    position: relative;
+    transition: all .3s ease
+}
+
+pre.md-meta-block::after {
+    content: "YAML";
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background-color: var(--element-color);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    pointer-events: none
+}
+
+pre.md-meta-block:hover {
+    background-color: #fff;
+    border-style: solid;
+    border-color: var(--element-color-deep);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .05);
+    transform: translateY(-2px)
+}
+
+#write code:not(.md-fencescode) {
+    font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace;
+    font-size: .9em;
+    letter-spacing: .5px;
+    color: var(--element-color-linecode);
+    background-color: var(--element-color-linecode-background);
+    padding: 5px 5px;
+    margin: 0 2px;
+    border-radius: 6px;
+    vertical-align: middle;
+    transition: all .2s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+#write code:not(.md-fencescode):hover {
+    background-color: var(--element-color);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px var(--element-color-so-shallow);
+    text-decoration: none
+}
+
+.md-diagram {
+    background: 0 0 !important;
+    margin: 20px 0
+}
+
+.node circle,
+.node ellipse,
+.node path,
+.node rect {
+    fill: var(--element-color-so-shallow) !important;
+    stroke: var(--primary-color) !important;
+    stroke-width: 1.5px !important;
+    transition: all .3s ease
+}
+
+.node polygon {
+    fill: color-mix(in srgb, var(--element-color-shallow), transparent 50%) !important;
+    stroke: var(--element-color-deep) !important;
+    stroke-width: 1.5px !important
+}
+
+.edgePath .path,
+.flowchart-link {
+    stroke: var(--element-color-deep) !important;
+    stroke-width: 1.5px !important;
+    opacity: .8 !important
+}
+
+.marker path,
+marker path {
+    fill: var(--element-color-deep) !important;
+    stroke: var(--element-color-deep) !important
+}
+
+.cluster-label text,
+.edgeLabel,
+.labelBkg,
+.node .label {
+    color: var(--appui-color-text) !important;
+    fill: var(--appui-color-text) !important;
+    font-weight: 500 !important;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff !important;
+    background-color: transparent
+}
+
+.edgeLabel .label,
+.edgeLabel div {
+    background-color: #fff !important;
+    border-radius: 4px
+}
+
+.edgeLabel p,
+.edgeLabel span {
+    background-color: transparent !important;
+    color: var(--appui-color-text) !important
+}
+
+.edgeLabel rect {
+    fill: #fff !important;
+    opacity: 1 !important;
+    stroke: none !important
+}
+
+.labelBkg {
+    fill: #fff !important;
+    background-color: #fff !important;
+    opacity: 1 !important
+}
+
+.cluster rect {
+    fill: color-mix(in srgb, var(--element-color-soo-shallow), transparent 50%) !important;
+    stroke: var(--element-color-shallow) !important;
+    stroke-dasharray: 4px !important
+}
+
+.cluster span,
+.cluster-label text {
+    fill: var(--element-color-deep) !important;
+    color: var(--element-color-deep) !important;
+    background: 0 0 !important;
+    font-weight: 700 !important
+}
+
+.md-fences:not([lang=mermaid])::before {
+    content: attr(lang);
+    font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace;
+    text-align: right;
+    padding-right: 15px;
+    color: #7e7e7e;
+    display: block;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
+    height: 32px;
+    width: 100%;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-color: #f8f8f8;
+    border-radius: 5px 5px 0 0;
+    background-position: 6px 11px;
+    margin-bottom: 0
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+    overflow-x: auto
+}
+
+.md-fences {
+    position: relative;
+    z-index: 1;
+    overflow: visible
+}
+
+.md-fences.md-focus {
+    z-index: 100
+}
+
+.md-fences .cm-s-inner.CodeMirror {
+    margin-top: 0
+}
+
+.cm-s-inner.CodeMirror {
+    padding: 20px 12px 12px 20px;
+    color: #4f5467;
+    font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace;
+    border-radius: 10px;
+    background-color: #fa0303;
+    line-height: 1.6rem
+}
+
+.CodeMirror-gutters {
+    border-right: 1px solid #9d9d9d52;
+    background: inherit;
+    white-space: nowrap
+}
+
+pre.CodeMirror-line {
+    padding: 0 1.2rem
+}
+
+.CodeMirror-linenumber {
+    padding: 0 3px 0 5px;
+    text-align: right;
+    color: #a3a3a3
+}
+
+.cm-s-inner.CodeMirror {
+    background: #f8f8f8;
+    border-radius: 0 0 5px 5px;
+    padding: 5px 12px 12px 12px;
+    page-break-before: auto;
+    line-height: 1.8rem
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto .3rem auto auto;
+    transform: translateY(-120%)
+}
+
+.cm-keyword {
+    color: #a626a4 !important;
+    font-weight: 700 !important
+}
+
+.cm-variable {
+    color: #b92121 !important
+}
+
+.cm-tag {
+    color: var(--color-cm-keyword) !important;
+    font-weight: 700 !important
+}
+
+.cm-variable-2,
+.cm-variable-3 {
+    color: #7aadad !important;
+    font-weight: 700 !important
+}
+
+.cm-def {
+    color: #c18401 !important
+}
+
+.cm-attribute {
+    color: #8f6aa8 !important
+}
+
+.cm-comment,
+.md-comment,
+.md-meta {
+    color: #9a9a9a !important
+}
+
+.cm-string {
+    color: #50a14f !important;
+    font-variant-ligatures: common-ligatures !important
+}
+
+.cm-link {
+    color: #e46918 !important
+}
+
+.cm-type {
+    color: #626161
+}
+
+.cm-property {
+    color: #800a84 !important
+}
+
+.cm-tag:not(.cm-bracket) {
+    font-weight: 700 !important
+}
+
+.cm-operator {
+    color: #0abe00 !important
+}
+
+.cm-number {
+    color: #1694b6 !important
+}
+
+.cm-meta {
+    color: #4078f2 !important;
+    font-weight: 700 !important
+}
+
+.cm-builtin {
+    color: #fa6060 !important
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #a626a4 !important;
+    font-weight: 700
+}
+
+kbd {
+    display: inline-block;
+    min-width: 1.6em;
+    text-align: center;
+    padding: 3px 6px;
+    margin: 0 4px;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: .9em;
+    line-height: 1.4;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: #fff;
+    color: var(--element-color-deep);
+    border: 1px solid var(--element-color);
+    border-bottom-width: 3px;
+    box-shadow: 0 2px 0 var(--element-color-so-shallow);
+    transition: all .15s cubic-bezier(.25, .8, .25, 1);
+    transform: translateY(0)
+}
+
+kbd:hover {
+    border-bottom-width: 1px;
+    transform: translateY(2px);
+    background-color: var(--element-color-soo-shallow);
+    box-shadow: 0 0 0 transparent;
+    color: var(--element-color-deep)
+}
+
+#write table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid var(--element-color-shallow);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.6
+}
+
+#write table td,
+#write table th {
+    padding: 8px 12px;
+    color: #333;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all .2s ease
+}
+
+#write table td:last-child,
+#write table th:last-child {
+    border-right: none
+}
+
+#write table tr:last-child td {
+    border-bottom: none
+}
+
+#write table th {
+    background-color: var(--element-color-soo-shallow);
+    color: var(--element-color-deep);
+    font-weight: 700;
+    white-space: nowrap
+}
+
+#write table tbody tr:hover td {
+    background-color: var(--element-color-soo-shallow)
+}
+
+#write table tbody td:hover {
+    background-color: var(--element-color-soo-shallow);
+    color: var(--element-color-deep);
+    box-shadow: inset 0 0 0 1px var(--element-color-shallow);
+    cursor: default
+}
+
+#write .footnote-word {
+    font-weight: 400;
+    color: #595959
+}
+
+#write .footnote-ref {
+    font-weight: 400;
+    color: #595959
+}
+
+#write .footnote-item em {
+    font-size: 14px;
+    color: #595959;
+    display: block;
+    background: 0 0
+}
+
+#write sup.md-footnote {
+    font-size: 9px;
+    padding: 1px 5px;
+    top: -11px;
+    left: 3px;
+    background-color: rgba(238, 238, 238, .7);
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.md-alert {
+    padding: 5px 10px;
+    margin-bottom: 16px;
+    color: #555;
+    border: none !important;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease, background-color .3s ease
+}
+
+.md-alert:hover {
+    transform: scale(1.01) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+    z-index: 1
+}
+
+.md-alert-text-container {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(2px);
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .03);
+    position: relative;
+    z-index: 2
+}
+
+.md-alert-text-container::after {
+    margin-right: 0
+}
+
+.md-alert::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: -12px;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    opacity: .12;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 0;
+    transition: all .4s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+.md-alert:hover::after {
+    transform: rotate(0) scale(1.1);
+    opacity: .2;
+    right: 0;
+    bottom: -4px
+}
+
+.md-alert-text svg {
+    fill: currentColor;
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+    width: 1em;
+    height: 1em
+}
+
+.md-alert.md-alert-note {
+    background-color: rgba(108, 92, 231, .1)
+}
+
+.md-alert-text-note {
+    color: #6c5ce7
+}
+
+.md-alert.md-alert-note:hover {
+    background-color: rgba(108, 92, 231, .15)
+}
+
+.md-alert.md-alert-note::after {
+    content: "📝"
+}
+
+.md-alert.md-alert-tip {
+    background-color: rgba(0, 184, 148, .1)
+}
+
+.md-alert-text-tip {
+    color: #00b894
+}
+
+.md-alert.md-alert-tip:hover {
+    background-color: rgba(0, 184, 148, .15)
+}
+
+.md-alert.md-alert-tip::after {
+    content: "💡"
+}
+
+.md-alert.md-alert-warning {
+    background-color: rgba(253, 203, 110, .15)
+}
+
+.md-alert-text-warning {
+    color: #e17055
+}
+
+.md-alert.md-alert-warning:hover {
+    background-color: rgba(253, 203, 110, .2)
+}
+
+.md-alert.md-alert-warning::after {
+    content: "⚠️"
+}
+
+.md-alert.md-alert-important {
+    background-color: rgba(255, 118, 117, .12)
+}
+
+.md-alert-text-important {
+    color: #ff7675
+}
+
+.md-alert.md-alert-important:hover {
+    background-color: rgba(255, 118, 117, .18)
+}
+
+.md-alert.md-alert-important::after {
+    content: "📌"
+}
+
+.md-alert.md-alert-caution {
+    background-color: rgba(214, 48, 49, .08)
+}
+
+.md-alert-text-caution {
+    color: #d63031
+}
+
+.md-alert.md-alert-caution:hover {
+    background-color: rgba(214, 48, 49, .12)
+}
+
+.md-alert.md-alert-caution::after {
+    content: "🔥"
+}
+
+.md-toc {
+    margin: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, .4);
+    background-image: radial-gradient(circle at -22% -42%, var(--element-color-so-shallow), transparent 42%), radial-gradient(circle at 100% 170%, var(--element-color-shallow), transparent 42%);
+    background-repeat: no-repeat;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .05);
+    border-radius: 16px;
+    font-size: 15px;
+    color: #555;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease
+}
+
+.md-toc:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .1)
+}
+
+.md-toc:before {
+    content: "目录";
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--element-color-deep);
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    border-bottom: 1px dashed rgba(0, 0, 0, .08);
+    padding-bottom: 15px
+}
+
+.md-toc-item {
+    display: block;
+    line-height: 1.8em;
+    color: #666;
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 50px;
+    margin-bottom: 4px;
+    position: relative;
+    transition: all .2s cubic-bezier(.25, .8, .25, 1)
+}
+
+.md-toc-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%
+}
+
+.md-toc-h1 {
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, .4)
+}
+
+.md-toc-h2 {
+    margin-left: 1em;
+    font-size: .95rem
+}
+
+.md-toc-h3 {
+    margin-left: 2em;
+    font-size: .9rem;
+    color: #777
+}
+
+.md-toc-h4 {
+    margin-left: 3em;
+    font-size: .85em;
+    opacity: .8
+}
+
+.md-toc-h5 {
+    margin-left: 4em;
+    font-size: .85em;
+    opacity: .7
+}
+
+.md-toc-h6 {
+    margin-left: 5em;
+    font-size: .85em;
+    opacity: .6
+}
+
+.md-toc-item:hover {
+    background-color: rgba(255, 255, 255, .95);
+    color: var(--element-color-deep);
+    padding-left: 20px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05)
+}
+
+.md-tooltip-hide>span {
+    display: none
+}
+
+#typora-sidebar {
+    height: 100%;
+    color: var(--text-color);
+    font-size: .92rem;
+    background-color: var(--bg-color)
+}
+
+#outline-content::-webkit-scrollbar {
+    width: 5px
+}
+
+#file-library::-webkit-scrollbar {
+    width: 5px
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--element-color)
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--element-color-shallow)
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 8px
+}
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border,
+.ty-show-search #info-panel-tab-search .info-panel-tab-border {
+    border-radius: 10px;
+    height: 4px;
+    background-color: var(--appui-color)
+}
+
+.file-node-content {
+    line-height: 1.2rem
+}
+
+.file-tree-node.active>.file-node-content {
+    color: var(--appui-color)
+}
+
+span.file-node-title {
+    color: var(--appui-color-text)
+}
+
+.file-node-icon {
+    color: var(--appui-color-icon);
+    padding-right: .2rem
+}
+
+.file-tree-node.active>.file-node-background {
+    font-weight: bolder;
+    border-left: 4px solid var(--appui-color);
+    border-color: var(--appui-color)
+}
+
+.info-panel-tab-title {
+    font-weight: bolder;
+    color: var(--appui-color-text)
+}
+
+#file-library-search-panel {
+    background-color: #fff
+}
+
+#file-library-search-input {
+    border-radius: 3px;
+    border-color: var(--appui-color)
+}
+
+#file-library-search-input:focus {
+    border-width: 2px
+}
+
+#outline-content .outline-h2::after,
+#outline-content .outline-h2>.outline-item::before {
+    content: none !important;
+    display: none !important;
+    border: none !important;
+    background: 0 0 !important
+}
+
+#outline-content .outline-label {
+    border: none !important;
+    background: 0 0 !important;
+    padding-left: 0 !important;
+    margin: 0 !important
+}
+
+#outline-content .outline-item {
+    display: flex !important;
+    align-items: center !important;
+    width: fit-content;
+    max-width: 100%;
+    padding: 6px 12px;
+    margin-bottom: 2px;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    outline: 0;
+    transition: background-color .2s ease, color .2s ease, padding-right .2s ease, box-shadow .2s ease;
+    position: relative;
+    line-height: 1.6
+}
+
+#outline-content .outline-expander {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+    color: inherit
+}
+
+#outline-content .outline-label {
+    flex: 1;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+#outline-content .outline-h1 {
+    margin-top: 10px;
+    margin-bottom: 4px
+}
+
+#outline-content .outline-h2,
+#outline-content .outline-h3,
+#outline-content .outline-h4,
+#outline-content .outline-h5,
+#outline-content .outline-h6 {
+    border-left: 1.5px solid rgba(0, 0, 0, .06);
+    margin-left: 22px;
+    padding-left: 8px
+}
+
+#outline-content .outline-h1>.outline-item {
+    font-size: larger;
+    font-weight: 700;
+    color: var(--element-color-deep)
+}
+
+#outline-content .outline-item:hover {
+    background-color: var(--element-color-soo-shallow);
+    color: var(--element-color-deep);
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-left: none !important;
+    border-right: none !important
+}
+
+div.outline-item-active {
+    background-color: var(--element-color) !important;
+    color: #fff !important;
+    font-weight: 600;
+    box-shadow: 0 4px 10px var(--element-color-so-shallow);
+    transform: none;
+    padding-right: 30px !important;
+    padding-left: 12px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: none !important
+}
+
+#outline-content .outline-item-active::after {
+    content: "✦";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: rgba(255, 255, 255, .9);
+    display: block !important;
+    z-index: 10;
+    animation: outline-twinkle 1.5s infinite alternate
+}
+
+@keyframes outline-twinkle {
+    from {
+        opacity: .7;
+        transform: translateY(-50%) scale(.9)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1)
+    }
+}
+
+.typora-export-content .outline-content::before {
+    content: "目录";
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    z-index: -1
+}
+
+.typora-export-sidebar .outline-content {
+    padding-top: 60px !important;
+    padding-left: 10px !important;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 30px;
+    box-sizing: border-box
+}
+
+.typora-export-sidebar .outline-content::before {
+    content: "目录";
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--element-color-deep);
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    z-index: 10;
+    letter-spacing: 2px
+}
+
+.typora-export-sidebar .outline-h1 {
+    margin-top: 10px !important;
+    margin-bottom: 4px !important;
+    margin-left: 0 !important
+}
+
+.typora-export-sidebar .outline-h1>.outline-item {
+    font-size: 1.1em !important;
+    font-weight: 700 !important;
+    color: var(--element-color-deep) !important
+}
+
+.typora-export-sidebar .outline-h2,
+.typora-export-sidebar .outline-h3,
+.typora-export-sidebar .outline-h4,
+.typora-export-sidebar .outline-h5,
+.typora-export-sidebar .outline-h6 {
+    border-left: 1.5px solid rgba(0, 0, 0, .06) !important;
+    margin-left: 15px !important;
+    padding-left: 8px !important;
+    list-style: none !important
+}
+
+.typora-export-sidebar .outline-item {
+    display: flex !important;
+    align-items: center !important;
+    width: fit-content !important;
+    max-width: 95% !important;
+    padding: 6px 12px !important;
+    margin: 2px 0 !important;
+    color: inherit !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    border-radius: 50px !important;
+    border: none !important;
+    transition: all .2s ease;
+    line-height: 1.6;
+    overflow: visible !important
+}
+
+.typora-export-sidebar .outline-label {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    flex: 0 1 auto !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.typora-export-sidebar .outline-expander {
+    width: 16px !important;
+    text-align: center;
+    margin-right: 4px;
+    flex-shrink: 0
+}
+
+.typora-export .outline-expander::before {
+    content: "▸" !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 14px !important;
+    color: #999;
+    top: 0 !important;
+    display: inline-block;
+    transition: transform .2s
+}
+
+.typora-export .outline-expander:hover::before,
+.typora-export .outline-item-open>.outline-item>.outline-expander::before {
+    content: "▾" !important;
+    color: var(--element-color-deep)
+}
+
+.typora-export .outline-item-single .outline-expander::before {
+    display: none !important
+}
+
+.typora-export-sidebar .outline-item:hover {
+    background-color: var(--element-color-soo-shallow) !important;
+    color: var(--element-color-deep) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: none !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item {
+    background-color: var(--element-color) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 10px var(--element-color-so-shallow);
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+    margin-left: 0 !important;
+    border: none !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item .outline-label {
+    color: #fff !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item .outline-expander::before {
+    color: rgba(255, 255, 255, .8) !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item::after {
+    content: "✦";
+    position: static !important;
+    transform: none !important;
+    margin-left: 8px !important;
+    flex-shrink: 0;
+    display: inline-block !important;
+    line-height: 1;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    color: rgba(255, 255, 255, .9);
+    z-index: 10;
+    animation: outline-twinkle 1.5s infinite alternate
+}
+
+@media screen {
+    body.typora-export {
+        background-color: transparent
+    }
+}
+
+.typora-export-sidebar {
+    position: fixed;
+    margin-top: 0 !important;
+    top: 10px;
+    bottom: 10px;
+    left: 20px;
+    width: 320px;
+    background-color: var(--glass-bg-color);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .13);
+    z-index: 100;
+    overflow: hidden;
+    color: #555
+}
+
+.typora-export-sidebar .outline-content {
+    padding-top: 60px !important;
+    padding-left: 15px !important;
+    padding-right: 5px !important;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none
+}
+
+.typora-export #write {
+    margin: 20px auto;
+    max-width: 950px;
+    width: 90%;
+    min-height: calc(100vh - 40px);
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+    padding: 60px 80px
+}
+
+.typora-export-sidebar+#write {
+    margin-left: 350px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+    max-width: none;
+    min-height: calc(100vh - 20px)
+}
+
+@media screen and (max-width:1200px) {
+    .typora-export-sidebar {
+        display: none
+    }
+
+    .typora-export #write,
+    .typora-export-sidebar+#write {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        padding: 20px;
+        min-height: 100vh
+    }
+}
+
+@media print {
+    @page {
+        margin: 10mm;
+        size: A4
+    }
+
+    body {
+        background-color: transparent !important
+    }
+
+    body {
+        margin: 0 !important;
+        width: 100% !important
+    }
+
+    .typora-export #write {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: 0 0 !important
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important
+    }
+
+    #write::before {
+        display: block !important;
+        opacity: .1 !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        -webkit-mask-image: var(--bg-style) !important;
+        mask-image: var(--bg-style) !important;
+        background-color: var(--element-color) !important;
+        pointer-events: none;
+        z-index: -1
+    }
+
+    p {
+        line-height: 1.5rem
+    }
+
+    figure,
+    pre {
+        page-break-inside: avoid
+    }
+
+    ol,
+    ul {
+        page-break-inside: auto !important;
+        break-inside: auto !important
+    }
+
+    li {
+        page-break-inside: avoid;
+        break-inside: avoid
+    }
+
+    pre {
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+        white-space: pre-wrap
+    }
+
+    blockquote {
+        page-break-inside: auto !important;
+        break-inside: auto !important
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        page-break-inside: avoid !important
+    }
+
+    p {
+        orphans: 2;
+        widows: 2
+    }
+
+    .md-toc {
+        background-image: none
+    }
+
+    #write li:before {
+        border-color: transparent
+    }
+}
+
+@media print {
+    .page-break {
+        page-break-after: always;
+        break-after: always;
+        height: 0;
+        display: block;
+        visibility: hidden
+    }
+}
+
+.dropdown-menu.context-menu {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, .85) !important;
+    border: 1px solid rgba(255, 255, 255, .8) !important;
+    border-radius: 12px !important;
+    padding: 6px 0 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .04), 0 16px 40px rgba(0, 0, 0, .08) !important
+}
+
+.btn:focus {
+    outline-color: var(--element-color-shallow)
+}
+
+body .md-table-resize-popover {
+    width: max-content !important;
+    max-width: none !important;
+    height: auto !important;
+    padding: 12px !important;
+    background-color: var(--bg-color) !important;
+    border: none;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .12) !important
+}
+
+body .md-table-resize-popover .arrow {
+    display: none !important
+}
+
+body .md-table-resize-popover .md-grid-board-wrap {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 !important
+}
+
+body .md-table-resize-popover .md-grid-board {
+    width: auto !important;
+    border-collapse: separate !important;
+    border-spacing: 3px !important;
+    margin: 0 auto 10px auto !important
+}
+
+body .md-table-resize-popover .md-grid-board td {
+    padding: 0 !important;
+    background: 0 0 !important;
+    border: none !important
+}
+
+body .md-table-resize-popover .md-grid-board a {
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 !important;
+    border-radius: 3px !important;
+    background-color: color-mix(in srgb, var(--text-color), transparent 90%) !important;
+    border: 1px solid transparent !important;
+    box-sizing: border-box !important;
+    transition: all .2s cubic-bezier(.34, 1.56, .64, 1) !important
+}
+
+body .md-table-resize-popover .md-grid-board td.md-grid-ext {
+    background: 0 0 !important
+}
+
+body .md-table-resize-popover .md-grid-board td.md-grid-ext a {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 4px color-mix(in srgb, var(--primary-color), transparent 60%) !important;
+    opacity: .9 !important
+}
+
+body .md-table-resize-popover .md-grid-board td.md-grid-ext a:hover {
+    opacity: 1 !important;
+    transform: scale(1.15) !important;
+    border-radius: 5px !important
+}
+
+body .md-table-resize-popover .popover-title {
+    background: 0 0 !important;
+    border: none !important;
+    border-top: 1px dashed color-mix(in srgb, var(--element-color), var(--text-color) 20%) !important;
+    padding: 10px 0 0 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    color: var(--element-color) !important;
+    font-size: 13px !important;
+    font-family: var(--monospace, monospace) !important;
+    font-weight: 400 !important
+}
+
+body .md-table-resize-popover input {
+    width: 36px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    text-align: center !important;
+    border: 1px solid var(--element-color-so-shallow) !important;
+    border-radius: 4px !important;
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+    font-family: var(--monospace, monospace) !important;
+    font-size: 14px !important;
+    outline: 0 !important;
+    transition: all .3s ease !important;
+    box-shadow: none !important
+}
+
+body .md-table-resize-popover input:focus {
+    border-color: var(--primary-color) !important;
+    background-color: color-mix(in srgb, var(--primary-color), transparent 95%) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color), transparent 80%) !important
+}@import url();
+
+:root {
+  /* 标题后小图标，借鉴自思源笔记主题——Savor */
+  --h1-icon-shape: url("data:image/svg+xml;utf8,<svg fill='rgba(255, 176, 176, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M4.8 29.714v0c-1.371 0-2.514-1.143-2.514-2.514v0c0-1.371 1.143-2.514 2.514-2.514v0c1.371 0 2.514 1.143 2.514 2.514v0c0.114 1.371-1.029 2.514-2.514 2.514z'/></svg>") no-repeat center;
+  --h2-icon-shape: url("data:image/svg+xml;utf8,<svg fill='rgba(255, 176, 176, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>") no-repeat center;
+  --h3-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+  --h4-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286z'/></svg>");
+  --h5-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286zM4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+  --h6-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 16c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286z'/></svg>");
+
+  /* 文档背景样式 */
+  /* 1. 交叉斜线 */
+  --bg-shape-cross: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v30H0z' fill='none'/%3E%3Cpath d='M0 0L15 15M30 0L15 15M0 30L15 15M30 30L15 15' stroke='black' stroke-width='0.4'/%3E%3C/svg%3E");
+  /* 2. 星点图案 */
+  --bg-shape-star: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M10 10l2-6l2 6l6 2l-6 2l-2 6l-2-6l-6-2Z' fill='black'/%3E%3Cpath d='M30 15l1-3l1 3l3 1l-3 1l-1 3l-1-3l-3-1Z' fill='black'/%3E%3Cpath d='M25 30l1.5-4.5l1.5 4.5l4.5 1.5l-4.5 1.5l-1.5 4.5l-1.5-4.5l-4.5-1.5Z' fill='black'/%3E%3C/svg%3E");
+  /* 3. 六边形图案 */
+  --bg-shape-hex: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M10 5l10 0l5 8.66l-5 8.66l-10 0l-5-8.66Z' fill='none' stroke='black' stroke-width='0.4'/%3E%3Cpath d='M20 22.32l10 0l5 8.66l-5 8.66l-10 0l-5-8.66Z' fill='none' stroke='black' stroke-width='0.4'/%3E%3C/svg%3E");
+  /* 4. 十字圆点 */
+  --bg-shape-dot: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7.5' cy='7.5' r='0.5' fill='black'/%3E%3Ccircle cx='7.5' cy='2.5' r='0.5' fill='black'/%3E%3Ccircle cx='7.5' cy='12.5' r='0.5' fill='black'/%3E%3Ccircle cx='2.5' cy='7.5' r='0.5' fill='black'/%3E%3Ccircle cx='12.5' cy='7.5' r='0.5' fill='black'/%3E%3C/svg%3E");
+  /* 5. 三角形 */
+  --bg-shape-tri: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v30H0z' fill='none'/%3E%3Cpath d='M0 0L30 0L15 15Z' fill='black'/%3E%3Cpath d='M30 30L0 30L15 15Z' fill='black'/%3E%3C/svg%3E");
+  /* 6. 方格网 */
+  --bg-shape-grid: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0z' fill='none'/%3E%3Cpath d='M20 0v20M0 20h20' stroke='black' stroke-width='0.7'/%3E%3C/svg%3E");
+  /* 7. 无背景 (纯白背景) */
+  --bg-shape-none: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=");
+
+  /* 文档背景样式  none 无背景*/
+  --bg-style: var(--bg-shape-cross);
+
+  /* 自动编号格式设置 无需自动编号可全部注释掉或部分注释掉*/
+  /* --autonum-h1: counter(h1) ". ";
+  --autonum-h2: counter(h1) "." counter(h2) ". ";
+  --autonum-h3: counter(h1) "." counter(h2) "." counter(h3) ". ";
+  --autonum-h4: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". ";
+  --autonum-h5: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". ";
+  --autonum-h6: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "; */
+
+  /* 下面是文章内Toc目录自动编号，与上面一样即可 */
+  /* --autonum-h1toc: counter(h1toc) ". ";
+  --autonum-h2toc: counter(h1toc) "." counter(h2toc) ". ";
+  --autonum-h3toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) ". ";
+  --autonum-h4toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) "." counter(h4toc) ". ";
+  --autonum-h5toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) "." counter(h4toc) "." counter(h5toc) ". ";
+  --autonum-h6toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) "." counter(h4toc) "." counter(h5toc) "." counter(h6toc) ". "; */
+
+
+  
+  /* 文章区域的最大宽度，可以是多少px也可以是百分比 */
+  --max-width: 950px; 
+
+  
+  /* 主题颜色 */
+
+  --head-title-color: #3db8bf;
+  /* 标题主色 */
+  --head-title-h2-color: #fff;
+  --head-title-h2-background: linear-gradient(to right,
+      #80F7C4,#3DB8D3, #80F7C4);
+  /* 二级标题主色，因为二级标题是背景色的，所以单独设置 */
+
+  --element-color: #3db8bf;
+  /* 元素主色 */
+  --element-color-deep: #089ba3;
+  /* 元素深色 */
+  --element-color-shallow: #7aeaf0;
+  /* 元素浅色 */
+  --element-color-so-shallow: #7aeaf077;
+  /* 元素很浅色 */
+  --element-color-soo-shallow: #7aeaf018;
+  /* 元素非常浅色 */
+
+  /* 毛玻璃底色 透明度一定要很低 */
+  --glass-bg-color:#8ff9ff14;
+  
+
+  --element-color-linecode: #089ba3;
+  /* 行内代码文字色 */
+  --element-color-linecode-background: #7aeaf018;
+  /* 行内代码背景色 */
+
+  /* 程序本体UI */
+  --appui-color: #3db8bf;
+  /* 程序UI主题色 */
+  --appui-color-icon: #3db8bf;
+  /* 程序UI图标颜色 */
+  --appui-color-text: #333;
+  /* 程序UI文字色 */
+  --primary-color: #3db8bf;
+
+  --rawblock-edit-panel-bd: var(--element-color-soo-shallow);
+}
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+<link rel="stylesheet" href="https://www.botqiqi.com/assets/css/phycat-fonts.css">
+<title>Qiqi_Bot_ja-JP</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='qiqi-bot'><span>Qiqi Bot</span></h1><p><strong><span>初めて使う方は、</span><a href='https://www.botqiqi.com/guide/guide_ja-jp.html'><span>当社の初心者向けガイドをご覧ください</span></a></strong></p><p><strong><span>その他の言語のドキュメント：</span></strong></p><ul><li><p><strong><span>If you need a English version document</span></strong><span>, </span><strong><a href='https://www.botqiqi.com/index.html'><span>Click here</span></a></strong></p></li><li><p><strong><span>如果你需要简体中文版的文档，</span><a href='https://www.botqiqi.com/lang/doc_zh.html'><span>请点击此处</span></a></strong></p></li><li><p><strong><span>若你需要該文件的繁體中文版本</span></strong><span>，</span><strong><a href='https://www.botqiqi.com/lang/doc_zh-hant.html'><span>請點擊此處</span></a></strong></p></li><li><p><strong><span>Si necesitas una versión en español del documento</span></strong><span>, </span><strong><a href='https://www.botqiqi.com/lang/doc_es-mx.html'><span>Haz clic aquí</span></a></strong></p></li></ul><h2 id='はじめに'><span>はじめに</span></h2><hr /><p><span>    Qiqi BotはDiscord.pyで作られたDiscordボットです。Discordをもっと楽しめるよう、さまざまな機能を備えています。</span></p><h3 id='qiqiについて'><span>Qiqiについて</span></h3><p><span>    「Qiqi」という名前は、ゲーム『原神』のキャラクターに由来しています。その生い立ちや個性が魅力的でかわいらしいことから、開発者はこのキャラクターの名前をボットに付けました。</span></p><p><span>    現在、Qiqi Botは</span><u><span>オープンソースではありません</span></u><span>が、</span><strong><span>完全に無料で利用できます</span></strong><span>。追加料金もかかりません。</span></p><h3 id='対応言語'><span>対応言語</span></h3><p><span>    Qiqiは多言語に対応しています！通常はDiscordクライアントの言語に合わせて表示されます。言語はユーザーごとに設定されるので、同じサーバー内でも、各メンバーに別々の言語で応答できます。</span><code>settings</code><span>コマンドで手動で切り替えることもできます。現在の対応言語は次のとおりです。</span></p><ul><li><p><span>英語（デフォルト）</span></p></li><li><p><span>簡体字中国語</span></p></li><li><p><span>繁体字中国語</span></p></li><li><p><span>スペイン語</span></p></li><li><p><span>日本語</span></p></li></ul><h3 id='qiqiをサーバーに招待するには'><span>Qiqiをサーバーに招待するには？</span></h3><p><span>    Top.ggやdiscordbotlistで「Qiqi」を検索すると、サーバーに招待できます。次のリンクをブラウザーにコピーして開く方法でも招待できます。</span></p><p><span>    </span><a href='https://discord.com/api/oauth2/authorize?client_id=927363789089833021&amp;permissions=1515384729078&amp;scope=bot%20applications.commands'><span>Qiqiを招待する</span></a></p><p><span>    </span><a href='https://discord.gg/gbv6TveBRX'><span>Qiqiサポートサーバー</span></a></p><h2 id='コマンド'><span>コマンド</span></h2><hr /><p><span>    ここではQiqi Botのコマンドを紹介します。コマンドは次の五つのカテゴリーに分かれています。</span></p><ul><li><p><a href='#原神コマンド'><span>原神コマンド</span></a></p></li><li><p><a href='#音楽コマンド'><span>音楽コマンド</span></a></p></li><li><p><a href='#お楽しみコマンド'><span>お楽しみコマンド</span></a></p></li><li><p><a href='#管理コマンド'><span>管理コマンド</span></a></p></li><li><p><a href='#ユーティリティコマンド'><span>ユーティリティコマンド</span></a></p></li></ul><p><span>    このドキュメントでは、例に使うコマンドのプレフィックスを「</span><code>/</code><span>」に統一しています。</span></p><p><span>    </span><strong><span>プレフィックス</span><code>/</code><span>はスラッシュコマンド用で、いつでも使えます。サーバー独自のプレフィックスでコマンドを呼び出すこともできます。デフォルトは</span><code>q!</code><span>です。</span></strong></p><p><span>    </span><strong><code>/help</code><span>で、カテゴリーごとにすべてのコマンドを確認できます。</span></strong></p><ul><li><p><span>従来の表示方法も使えます。</span><code>/commands all</code><span>はコマンド全体、</span><code>/commands &lt;module&gt;</code><span>は指定したカテゴリーのコマンドを表示します。スマートフォンでは、</span><code>/mobilecommands all</code><span>のほうが見やすくなっています。</span></p></li></ul><p><span>    </span><strong><span>特定のコマンドの説明は、</span><code>/help &lt;command&gt;</code><span>で確認できます</span></strong><span>。</span></p><h3 id='原神コマンド'><span>原神コマンド</span></h3><hr /><p><span>    Qiqi Botの原神コマンドは、主にキャラクターや武器の育成に必要な計算を行います。キャラクター、武器、それらに関係する素材の情報を調べることもできます。</span></p><div class="md-alert md-alert-warning warning"><p><span class='md-alert-text md-alert-text-warning'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</span><br></p><p><span>現在、Qiqiの原神データベースは古い状態です。開発者が更新に取り組んでいますが、多くの作業が必要です。</span></p></div><p><span class='md-tab'>	</span><strong><a href='https://www.botqiqi.com/genshin/genshin_en-us.html'><span>原神コマンドの詳しいドキュメントはこちら</span></a></strong></p><p>&nbsp;</p><h3 id='音楽コマンド'><span>音楽コマンド</span></h3><hr /><p><span>    Qiqiは音楽を流すのが大好きです！Soundcloud、Bilibili、Netease、Penguの曲や動画を、URLやキーワードから再生できます。音楽機能を使う際は、Qiqiに</span><code>manage_messages</code><span>権限を与えることを</span><strong><span>おすすめします</span></strong><span>。キーワードで検索すると、5件の候補から聴きたい曲を選べます。便利ですよね。</span></p><p><span>    </span><strong><span>さらに、mystb.inで作ったカスタムプレイリストの読み込みにも対応しています。Soundcloud、Bilibili、Netease、Penguの曲を、一つのプレイリストにまとめられます！（詳しくは</span><a href='#カスタムプレイリスト'><span>カスタムプレイリスト</span></a><span>）</span></strong></p><p><span>    </span><strong><span>Discord上で、サーバーをまたいで使える個人のお気に入りも用意しています。好きな曲を保存して、そのまま再生できます！（詳しくは</span><a href='#音楽のお気に入り'><span>音楽のお気に入り</span></a><span>）</span></strong></p><ul><li><p><strong><span>play</span></strong><span>: Qiqiがあなたのいるボイスチャンネルに接続し、音楽を再生します。次の形式で直接再生できます。</span></p><ul><li><p><strong><span>Soundcloudの曲のURL</span></strong><span>:</span></p><ul><li><p><span>例（SoundcloudのURLから再生）：</span><code>/play https://soundcloud.com/user-235352228/let-the-wind-blow-to-you</code></p></li></ul></li><li><p><strong><span>Bilibiliの動画</span></strong><span>：</span><code>play</code><span>コマンドはBilibiliのURLや動画ID（avまたはbv）に対応しています。キーワードで検索する場合は、</span><code>bilibili</code><span>コマンドを使ってください。</span></p><ul><li><p><span>例（BilibiliのURLから再生）：</span><code>/play https://www.bilibili.com/video/BV18X4y1N7Yh</code></p></li><li><p><span>例（Bilibiliの投稿者の動画コレクションのURL）：</span><code>/bilibili https://space.bilibili.com/401742377/channel/collectiondetail?sid=1714898</code></p></li><li><p><span>例（Bilibiliのイベント動画のURL）：</span><code>/bilibili https://www.bilibili.com/festival/2023bnj?bvid=BV1zv4y117zo</code></p></li><li><p><span>例（Bilibiliの動画IDから再生）：</span><code>/play BV18X4y1N7Yh</code></p></li></ul></li><li><p><strong><span>Neteaseの音楽</span></strong><span>：</span><code>play</code><span>コマンドはNetease Musicの曲・アルバム・プレイリストのURLに対応しています。キーワードで検索する場合は、</span><code>netease</code><span>関連のコマンドを使ってください。</span></p><ul><li><p><span>例： </span><code>/play https://music.163.com/#/song?id=1807381939</code></p></li></ul></li><li><p><strong><span>Penguの音楽</span></strong><span>：</span><code>play</code><span>コマンドはPenguの曲・アルバム・プレイリストのURLに対応しています。曲をキーワードで検索する場合は、</span><code>pengu</code><span>関連のコマンドを使ってください。</span></p><ul><li><p><span>例： </span><code>/play https://y.qq.com/n/ryqq/songDetail/002VTEqi0FExMO</code></p></li></ul></li><li><p><strong><span>キーワード検索</span></strong><span>：</span><code>/settings</code><span>で</span><code>/play</code><span>の検索に使う音楽サービスを設定できます。設定後は、</span><code>/play</code><span>で選んだサービスの曲を検索できます。デフォルトは</span><code>soundcloud</code><span>です。</span></p><ul><li><p><span>例： </span><code>/play let the wind blow to you</code></p></li></ul></li></ul></li><li><p><strong><span>soundcloud</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Soundcloudの曲を再生します。</span></p><ul><li><p><span>例（SoundcloudのURLから再生）：</span><code>/soundcloud https://soundcloud.com/user-235352228/let-the-wind-blow-to-you</code></p></li><li><p><span>例（Soundcloudをキーワードで検索）：</span><code>/soundcloud let the wind blow to you</code><span>。Qiqiが5件の候補を表示するので、</span><code>1-5</code><span>の数字を入力して選んでください。このとき、</span><code>soundcloud</code><span>をもう一度入力する必要はありません。</span></p></li></ul></li><li><p><strong><span>bilibili</span></strong><span>: </span><strong><span>直接URL・aid・bvidを指定するか、キーワードで検索して</span></strong><span>、Bilibiliの動画を再生します。一つの動画に複数のパートがある場合は、自動で順に読み込みます。</span></p><ul><li><p><span>例（BilibiliのURLから再生）：</span><code>/bilibili https://www.bilibili.com/video/BV18X4y1N7Yh</code></p></li><li><p><span>例（Bilibiliの投稿者の動画コレクションのURL）：</span><code>/bilibili https://space.bilibili.com/401742377/channel/collectiondetail?sid=1714898</code></p></li><li><p><span>例（Bilibiliのイベント動画のURL）：</span><code>/bilibili https://www.bilibili.com/festival/2023bnj?bvid=BV1zv4y117zo</code></p></li><li><p><span>例（Bilibiliのaid・bvidから再生）：</span><code>/bilibili BV18X4y1N7Yh</code></p></li><li><p><span>例（Bilibiliをキーワードで検索）：</span><code>/bilibili Never gonna give you up</code></p></li></ul></li><li><p><strong><span>netease</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Neteaseの曲を再生します。</span></p><ul><li><p><span>例（Neteaseの曲のURL）：</span><code>/netease https://music.163.com/#/song?id=1807381939</code></p></li><li><p><span>例（Neteaseの曲をキーワードで検索）：</span><code>/netease Never gonna give you up</code></p></li></ul></li><li><p><strong><span>neteasealbum</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Neteaseのアルバムを再生します。</span></p><ul><li><p><span>例（NeteaseのアルバムのURL）：</span><code>/neteasealbum https://music.163.com/#/album?id=97767168</code></p></li><li><p><span>例（Neteaseのアルバムをキーワードで検索）：</span><code>/neteasealbum Jade Moon Upon a Sea of Clouds</code></p></li></ul></li><li><p><strong><span>neteaseplaylist</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Neteaseのプレイリストを再生します。</span></p><ul><li><p><span>例（NeteaseのプレイリストのURL）：</span><code>/neteaseplaylist https://music.163.com/#/playlist?id=5328007337</code></p></li><li><p><span>例（Neteaseのプレイリストをキーワードで検索）：</span><code>/neteaseplaylist rick roll</code></p></li></ul></li><li><p><strong><span>neteaseuser</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Neteaseユーザーのプロフィールを表示します。</span><code>プレイリスト</code><span>ボタンを押すと、そのユーザーの公開プレイリストも確認できます。</span></p><ul><li><p><span>例（NeteaseユーザーのページのURL）：</span><code>/neteaseuser https://music.163.com/#/user/home?id=1321189664</code></p></li><li><p><span>例（Neteaseユーザーをキーワードで検索）：</span><code>/neteaseuser hoyo-mix</code></p></li></ul></li><li><p><strong><span>mynetease</span></strong><span>: Neteaseユーザーを関連付けるか、すでに関連付けたユーザーのプロフィールを表示します。</span><u><span>これは、どのNeteaseユーザーを使うかQiqiに伝えるだけの設定です。アカウントにログインするわけではなく、Qiqiがパスワードを尋ねることもありません。</span></u><span>そのため、基本的にはどのNeteaseユーザーでも指定できます。</span></p><ul><li><p><span>例（ユーザーページのURLで関連付け）：</span><code>/mynetease https://music.163.com/#/user/home?id=1321189664</code></p></li><li><p><span>例（ユーザー名を検索して関連付け）：</span><code>/mynetease hoyo-mix</code></p></li><li><p><span>例（関連付けたユーザーのプロフィールを確認）：</span><code>/mynetease</code></p></li></ul></li><li><p><strong><span>playmynetease</span></strong><span>: 関連付けたNeteaseユーザーのプレイリストを、番号で指定して再生します。関連付けは</span><code>/mynetease &lt;user&gt;</code><span>で設定できます。プレイリストの番号は、</span><code>/mynetease</code><span>を実行して</span><code>プレイリスト</code><span>ボタンを押すと確認できます。</span></p><ul><li><p><span>例（関連付けたユーザーの3番のプレイリストを再生。該当するものがある場合）：</span><code>/playmynetease 3</code></p></li></ul></li><li><p><strong><span>newsongs</span></strong><span>: 指定した地域のNeteaseの新曲を表示します。指定できるのは</span><code>Chinese</code><span>、</span><code>EU &amp; America</code><span>、</span><code>Japanese</code><span>、</span><code>Korean</code><span>です。</span></p><ul><li><p><span>例（欧米の新曲）：</span><code>/newsongs EU &amp; America</code></p></li></ul></li><li><p><strong><span>pengu</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Penguの曲を再生します。</span></p><ul><li><p><span>例（Penguの曲のURL）：</span><code>/pengu https://y.qq.com/n/ryqq/songDetail/002VTEqi0FExMO</code></p></li><li><p><span>例（Penguの曲をキーワードで検索）：</span><code>/pengu Liyue</code></p></li></ul></li><li><p><strong><span>pengualbum</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Penguのアルバムを再生します。</span></p><ul><li><p><span>例（PenguのアルバムのURL）：</span><code>/pengualbum https://y.qq.com/n/ryqq/albumDetail/003OVp020Cu5cy</code></p></li><li><p><span>例（Penguのアルバムをキーワードで検索）：</span><code>/pengualbum Jade Moon Upon a Sea of Clouds</code></p></li></ul></li><li><p><strong><span>penguplaylist</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Penguのプレイリストを再生します。</span></p><ul><li><p><span>例（PenguのプレイリストのURL）：</span><code>/penguplaylist https://y.qq.com/n/ryqq/playlist/8823061377</code></p></li><li><p><span>例（Penguのプレイリストをキーワードで検索）：</span><code>/penguplaylist Genshin Impact OST</code></p></li></ul></li><li><p><del><strong><span>spotify</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Spotifyの曲を再生します。</span></del><span> </span><strong><span>（一時的に提供を停止）</span></strong></p><ul><li><p><del><span>例（Spotifyの曲のURL）：</span><code>/spotify https://open.spotify.com/track/6MZoXnbjDE2VgUWeMJgrrn</code></del></p></li><li><p><del><span>例（Spotifyの曲をキーワードで検索）：</span><code>/spotify Genshin Impact Main Theme</code></del></p></li></ul></li><li><p><del><strong><span>spotifyplaylist</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Spotifyのプレイリストを再生します。</span></del><span> </span><strong><span>（一時的に提供を停止）</span></strong></p><ul><li><p><del><span>例（SpotifyのプレイリストのURL）：</span><code>/spotifyplaylist https://open.spotify.com/playlist/151KKX3jvHH9FFgQKoaDC0</code></del></p></li><li><p><del><span>例（Spotifyのプレイリストをキーワードで検索）：</span><code>/spotifyplaylist Genshin Impact OST</code></del></p></li></ul></li><li><p><del><strong><span>spotifyalbum</span></strong><span>: </span><strong><span>直接URLを指定するか、キーワードで検索して</span></strong><span>、Spotifyのアルバムを再生します。</span></del><span> </span><strong><span>（一時的に提供を停止）</span></strong></p><ul><li><p><del><span>例（SpotifyのアルバムのURL）：</span><code>/spotifyalbum https://open.spotify.com/album/2S4UIiVgsFwV2e1vElIMjq</code></del></p></li><li><p><del><span>例（Spotifyのアルバムをキーワードで検索）：</span><code>/spotifyalbum Genshin Impact - Realm of Tranquil Eternity</code></del></p></li></ul></li><li><p><del><strong><span>spotifyartist</span></strong><span>: Spotifyのアーティストを検索し、プロフィールやアルバムを表示します。</span><strong><span>直接URLを指定するか、キーワードで検索できます。</span></strong></del><span> </span><strong><span>（一時的に提供を停止）</span></strong></p><ul><li><p><del><span>例（SpotifyのアーティストのURL）：</span><code>/spotifyartist https://open.spotify.com/artist/2YvlK6lKiKVjXxsjvNbnqg</code></del></p></li><li><p><del><span>例（Spotifyのアーティストをキーワードで検索）：</span><code>/spotifyartist HOYO-MIX</code></del></p></li></ul></li><li><p><strong><span>join</span></strong><span>: Qiqiをあなたのいるボイスチャンネルに接続します。</span></p><ul><li><p><span>例： </span><code>/join</code></p></li></ul></li><li><p><strong><span>leave</span></strong><span>: Qiqiをボイスチャンネルから切断します。</span></p><ul><li><p><span>例： </span><code>/leave</code></p></li></ul></li><li><p><strong><span>pause</span></strong><span>: 再生中の音楽を一時停止します。</span></p><ul><li><p><span>例： </span><code>/pause</code></p></li></ul></li><li><p><strong><span>unpause</span></strong><span>: 一時停止している音楽の再生を再開します。</span></p><ul><li><p><span>例： </span><code>/unpause</code></p></li></ul></li><li><p><strong><span>stop</span></strong><span>: 再生キュー内のすべての曲を削除し、ボイスチャンネルから切断します。</span></p><ul><li><p><span>例： </span><code>/stop</code></p></li></ul></li><li><p><strong><span>skip</span></strong><span>: 6通りの方法で曲をスキップできます。</span></p><ul><li><p><span>例（現在再生中の曲をスキップ）：</span><code>/skip</code></p></li><li><p><span>例（再生キューのn番目の曲をスキップ。nは数字）：</span><code>/skip n</code></p></li><li><p><span>例（指定した範囲の曲をスキップ。xとyは数字）：</span><code>/skip x-y</code></p></li><li><p><span>例（指定したユーザーが追加した曲をすべてスキップ）：</span><code>/skip @user</code></p></li><li><p><span>例（現在の曲をあとで聴けるようにしてスキップ）：</span><code>/skip later</code></p></li><li><p><span>例（現在の再生キューの重複曲をスキップ）：</span><code>/skip dup</code></p></li></ul></li><li><p><strong><span>queue</span></strong><span>: 現在の再生キューを表示します。また、キーワードで曲の位置を検索できます。曲名は完全一致でなくてもかまいません。</span></p><ul><li><p><span>例（再生キューを表示）：</span><code>/queue</code></p></li><li><p><span>例（該当する曲の位置を検索）：</span><code>/queue never gonna give you up</code></p></li></ul></li><li><p><strong><span>jump</span></strong><span>: 再生キュー内の番号を指定して、その曲を次に再生する位置へ移動します。</span><strong><span>何も再生していない場合は1番目へ、再生中の曲がある場合は2番目へ移動し、現在の曲の次に再生されます。</span></strong><span> 負の整数を使うと、再生キューの後ろから数えて指定できます。</span></p><ul><li><p><span>例（再生キューの5番目の曲を次に再生する位置へ移動）：</span><code>/jump 5</code></p></li><li><p><span>例（再生キューの最後の曲を次に再生する位置へ移動）：</span><code>/jump -1</code></p></li></ul></li><li><p><strong><span>shuffle</span></strong><span>: 再生キューの曲順をシャッフルします（</span><strong><span>再生中の曲がある場合は、その曲を除きます</span></strong><span>）。</span><code>jump</code><span>と似た仕組みです。</span></p><ul><li><p><span>例： </span><code>/shuffle</code></p></li></ul></li><li><p><strong><span>repeat</span></strong><span>: 現在の曲や再生キューをリピートできます。何も再生していないときに1曲のリピートを選ぶと、再生キューの先頭の曲が対象になります。リピートをオフにすることもできます。</span></p><ul><li><p><span>例（1曲をリピート）：</span><code>/repeat single</code></p></li><li><p><span>例（リピートをオフ）：</span><code>/repeat off</code></p></li><li><p><span>例（再生キュー全体をリピート）：</span><code>/repeat all</code></p></li><li><p><span>例（再生キュー全体をリピートし、次の曲をランダムに選ぶ）：</span><code>/repeat random</code></p></li></ul></li><li><p><strong><span>nowplaying</span></strong><span>: 現在再生中の曲の情報と、音楽を操作するコントロールを表示します。プレーヤーから手軽に操作できます！パネルの見た目は</span><code>/appearance</code><span>でカスタマイズできます。</span></p><ul><li><p><span>例： </span><code>/nowplaying</code></p></li></ul></li><li><p><strong><span>appearance</span></strong><span>: </span><code>/nowplaying</code><span>の音楽情報とコントロールの外観をカスタマイズできます。現在の設定を見るoverview、パネルを確認するpreview、設定を変更するedit、デフォルトに戻すresetに対応しています。</span></p><ul><li><p><span>例（設定の概要を表示）：</span><code>/appearance overview</code></p></li><li><p><span>例（プレビュー）：</span><code>/appearance preview</code></p></li><li><p><span>例（編集）：</span><code>/appearance edit</code></p></li><li><p><span>例（リセット）：</span><code>/appearance reset</code></p></li></ul></li><li><p><strong><span>history</span></strong><span>: サーバーで再生した曲の履歴を表示します。現在、1サーバーにつき最大300曲の情報を保存できます。</span></p><ul><li><p><span>例： </span><code>/history</code></p></li></ul></li><li><p><strong><span>playhistory</span></strong><span>: 再生履歴の番号を指定して、曲を再生します。</span><strong><span>最近聴いた曲なら、キーワードで検索し直したり、URLをコピーし直したりする必要はありません！</span></strong><span> 番号を忘れた場合は、先に</span><code>history</code><span>で確認できます。</span></p><ul><li><p><span>例（再生履歴の8番の曲を再生）：</span><code>/playhistory 8</code></p></li><li><p><span>例（再生履歴の5～27番の曲を再生）：</span><code>/playhistory 5-27</code></p></li></ul></li><li><p><strong><span>voteskip</span></strong><span>: 曲をスキップするかどうかの投票を始めます。Qiqiと同じボイスチャンネルにいるメンバーは、メッセージ下のチェックマークのリアクションで投票できます。</span><strong><span>投票を始めた人もチェックマークを押すのを忘れずに。賛成率が75%以上になると、曲をスキップします</span></strong><span>。</span></p><ul><li><p><span>例（再生キューの5番の曲を投票でスキップ）：</span><code>/voteskip 5</code></p></li><li><p><span>例（再生キュー全体を投票でスキップ）：</span><code>/voteskip queue</code><span> または </span><code>/voteskip all</code></p></li></ul></li><li><p><strong><span>export</span></strong><span>: 現在の再生キューと履歴を保存します。Qiqiが曲のURLと名前を</span><code>mystb.in</code><span>へ書き出し、再生キュー用と履歴用の二つのリンクを返します。</span></p><ul><li><p><span>例： </span><code>/export</code></p></li></ul></li><li><p><strong><span>reset</span></strong><span>: サーバーの再生キューと履歴を消去してリセットします。カスタムプレイリストは対象外です。削除するには</span><code>deletecp</code><span>を使ってください。再生キューや履歴の番号がおかしいなど、不具合があるときに使うコマンドです。</span><strong><code>manage_server</code><span>権限が必要です。</span></strong></p><ul><li><p><span>例： </span><code>/reset</code></p></li></ul></li><li><p><strong><span>restart</span></strong><span>: 現在再生中の曲を最初から再生します。</span></p><ul><li><p><span>例： </span><code>/restart</code></p></li></ul></li><li><p><strong><span>seek</span></strong><span>: 指定した時刻へ再生位置を移動します。</span><strong><span>時間は3種類の形式で指定できます：秒数、MM:SS、HH:MM:SS。</span></strong><span> 指定した時刻が曲の長さを超える場合は、曲の最後の1秒へ移動します。</span></p><ul><li><p><span>例（次の三つは同じ時刻を指定します）：</span><code>/seek 100</code><span> または </span><code>/seek 1:40</code><span> または </span><code>/seek 0:01:40</code></p></li></ul></li><li><p><strong><span>forward</span></strong><span>: 現在の再生位置から、指定した時間だけ早送りします。</span><strong><span>時間は3種類の形式で指定できます：秒数、MM:SS、HH:MM:SS。</span></strong><span> 移動先が曲の長さを超える場合は、曲の最後の1秒へ移動します。</span></p><ul><li><p><span>例（次の三つは同じ時間を指定します）：</span><code>/forward 30</code><span> または </span><code>/forward 0:30</code><span> または </span><code>/forward 0:00:30</code></p></li></ul></li><li><p><strong><span>rewind</span></strong><span>: 現在の再生位置から、指定した時間だけ巻き戻します。</span><strong><span>時間は3種類の形式で指定できます：秒数、MM:SS、HH:MM:SS。</span></strong><span> 移動先が曲の先頭より前になる場合は、曲の先頭へ戻ります。</span></p><ul><li><p><span>例（次の三つは同じ時間を指定します）：</span><code>/rewind 65</code><span> または </span><code>/rewind 1:05</code><span> または </span><code>/rewind 0:01:05</code></p></li></ul></li><li><p><del><strong><span>volume（一時的に提供を停止）</span></strong><span>: 再生中の音楽の音量を0%～100%で調整します。音が大きくなりすぎないよう、各曲のデフォルト音量は70%になっています。</span></del><span>（一時的に提供を停止）</span></p><ul><li><p><del><span>例（音量を50%に調整）：</span><code>/volume 50</code></del></p></li></ul></li><li><p><strong><span>sleep</span></strong><span>: 分単位でタイマーを設定します。時間になると、Qiqiを含む全メンバーをボイスチャンネルから切断します。実行時刻には0～30秒の誤差が生じる場合があります。</span><strong><code>move_members</code><span>権限が必要です。</span></strong></p><ul><li><p><span>例（45分のタイマーを設定）：</span><code>/sleep 45</code></p></li><li><p><span>例（タイマーを取り消す）：</span><code>/sleep 0</code></p></li></ul></li></ul><h4 id='カスタムプレイリスト'><span>カスタムプレイリスト</span></h4><p><span>    </span><strong><span>カスタムプレイリストは、次の5ステップで作れます！</span></strong></p><ol start='' ><li><p><a href='https://www.mystb.in'><span>mystb.in</span></a><span>を開き、プレイリストを作成します。</span></p></li><li><p><span>曲のURLを1行に一つずつ貼り付けます。</span><strong><span>各URLには32文字以内の短い名前を付けられます。名前を付けるのがおすすめです。URLと名前の間には空白を入れてください。</span></strong><span> URLと短い名前以外は書かないでください。Soundcloud、Netease、Bilibili、Penguの4サイトに対応しており、別々のサイトの曲を一つのプレイリストにまとめられます！</span></p><p><strong><span>1行の例（おすすめ）</span></strong><span>：</span><code>https://soundcloud.com/user-235352228/let-the-wind-blow-to-you let the wind blow to you</code></p><p><span>1行の例（使えますが、おすすめはしません）：</span><code>https://soundcloud.com/user-235352228/let-the-wind-blow-to-you</code></p><p><span>注意：</span><strong><span>URLと短い名前の間には、必ず空白を入れてください。</span></strong><span> </span><code>:,#!.-+^/;</code><span>など、ほかの記号で区切ることは</span><strong><span>できません</span></strong><span>。</span></p></li><li><p><span>入力が終わったら「</span><strong><span>Save Paste</span></strong><span>」ボタンを押します。URLが自動的にクリップボードへコピーされます。</span></p></li><li><p><span>ブラウザーのアドレス欄を確認します。保存すると、mystb.inがプレイリストの固定リンクを発行します。</span></p></li><li><p><code>/playcp</code><span>でこのプレイリストを再生するか、</span><code>/savecp</code><span>でQiqiに保存してもらいます。</span></p></li></ol><p><span>（作成や保存の手順で迷ったら、「よくある質問」の9番もご覧ください。Qiqiサポートサーバーで質問することもできます。）</span></p><p><span>    </span><strong><span>覚えておきたいこと</span></strong></p><ul><li><p><span>Qiqiは1サーバーにつき5件のプレイリストURLを保存できます。保存した番号を</span><code>/playcp</code><span>に指定すれば再生できます。例（保存した3番のプレイリストを再生）：</span><code>/playcp 3</code></p></li><li><p><span>各プレイリストの曲数は300曲以内にしてください。</span></p></li><li><p><span>プレイリストの読み込みには時間がかかることがあります。Qiqiは最初の曲を再生しながら、残りの曲を読み込みます。頑張って読み込んでいるので、少しだけ待ってあげてください。</span></p></li><li><p><code>/savecp</code><span>で保存するときは、どんなプレイリストか思い出しやすい短い名前を付けてください。</span></p></li><li><p><code>cp</code><span>は「custom playlist（カスタムプレイリスト）」の略です。意味を知っていると、短いコマンド名も覚えやすくなります。</span></p><p><strong><span>コマンド</span></strong></p></li><li><p><strong><span>playcp</span></strong><span>: mystb.inのカスタムプレイリストを再生します。URLを直接指定するほか、保存済みプレイリストの番号や名前でも再生できます。</span><strong><span>（作成方法の詳しい説明は</span></strong><span> </span><a href='https://www.botqiqi.com' target='_blank' class='url'>https://www.botqiqi.com</a><span> </span><strong><span>をご覧ください。）</span></strong><span> 再生する範囲を指定することもできます。</span></p><ul><li><p><span>例（mystb.inのURLを直接再生）：</span><code>/playcp https://mystb.in/HeartHillInteger.less</code></p></li><li><p><span>例（保存した3番のプレイリストを再生）：</span><code>/playcp 3</code></p></li><li><p><span>例（「genshin full OST」という名前で保存したプレイリストを再生）：</span><code>/playcp genshin full OST</code></p></li><li><p><span>例（mystb.inのURLから2～5曲目を再生）：</span><code>/playcp https://mystb.in/HeartHillInteger.less 2-5</code></p></li><li><p><span>例（保存した3番のプレイリストの3～7曲目を再生）：</span><code>/playcp 3 3-7</code></p></li></ul></li><li><p><strong><span>savecp</span></strong><span>: 指定したプレイリストのURLをQiqiが保存します。もう自分でURLを覚えておく必要はありません。</span><strong><span>最初にURL、そのあとに16文字以内の短い名前を入力してください。</span></strong><span> 保存したプレイリストは</span><code>/viewcp</code><span>で確認できます。サーバーの上限である5件に達している場合は、</span><code>1-5</code><span>の番号を入力して、どのプレイリストを新しいものに置き換えるか選びます。</span></p><ul><li><p><span>例（プレイリストのURLを「Rickroll」という名前で保存）：</span><code>/savecp https://mystb.in/HeartHillInteger.less Rickroll</code></p></li></ul></li><li><p><strong><span>viewcp</span></strong><span>: 保存したカスタムプレイリストをすべて表示します！</span></p><ul><li><p><span>例： </span><code>/viewcp</code></p></li></ul></li><li><p><strong><span>deletecp</span></strong><span>: 保存したカスタムプレイリストを削除します。番号で一つを指定するか、「all」で全部を削除できます。</span></p><ul><li><p><span>例（保存した4番のプレイリストを削除）：</span><code>/deletecp 4</code></p></li><li><p><span>例（保存したプレイリストをすべて削除）：</span><code>/deletecp all</code></p></li></ul></li></ul><h4 id='音楽のお気に入り'><span>音楽のお気に入り</span></h4><p><span>    Qiqi Botは、好きな曲を個人のお気に入りとして覚えておけます。保存した曲は</span><strong><span>別のサーバーでも再生できます</span></strong><span>。上限は1人300曲です。</span><a href='https://mystb.in'><span>mystb.in</span></a><span>へ書き出して、カスタムプレイリストにすることもできます。</span></p><p><span>    </span><strong><span>スラッシュコマンドの</span><code>/</code><span>を使った場合、お気に入りの操作メッセージは自分だけに表示されます。ただし、再生用の</span><code>playfavorite</code><span>コマンドは例外です。</span></strong></p><ul><li><p><strong><span>addfavorite</span></strong><span>: お気に入りに曲を追加します。追加する方法は</span><strong><span>二つあります</span></strong><span>。</span></p><ol start='' ><li><p><strong><span>曲のURLと名前を指定して追加する</span></strong></p><ul><li><p><span>例： </span><code>/addfavorite https://soundcloud.com/user-235352228/let-the-wind-blow-to-you Let the wind blow to you</code></p></li><li><p><span>補足：自分で付ける曲名は32文字以内です。</span></p></li></ul></li><li><p><strong><span>Qiqiが現在再生中の曲を追加する</span></strong></p><ul><li><p><span>例（曲の情報はQiqiが自動で入力します）：</span><code>/addfavorite</code></p></li></ul></li></ol></li><li><p><strong><span>viewfavorite</span></strong><span>: お気に入りの一覧を表示します。長いURLは読みやすさのため表示しませんが、Qiqiはちゃんと保存しています。</span><strong><span>新しい順</span></strong><span>と</span><strong><span>古い順</span></strong><span>の二つの並び順に対応しており、デフォルトは新しい順です。</span></p><ul><li><p><span>例（デフォルトの新しい順）：</span><code>/viewfavorite</code></p></li><li><p><span>例（古い順）：</span><code>/viewfavorite earliest</code></p></li></ul></li><li><p><strong><span>deletefavorite</span></strong><span>: お気に入りの曲を番号や範囲で指定して削除するか、すべて削除します。番号は</span><code>viewfavorite</code><span>で確認できます。</span><strong><span>新しい順</span></strong><span>と</span><strong><span>古い順</span></strong><span>に対応しており、デフォルトは新しい順です。</span></p><ul><li><p><span>例（該当する曲がある場合、デフォルトの並び順で3番、5～7番、10番を削除。数字の間に空白は入れません）：</span><code>/deletefavorite 3,5-7,10</code></p></li><li><p><span>例（該当する曲がある場合、古い順で3番の曲を削除）：</span><code>/deletefavorite 3 earliest</code></p></li><li><p><span>例（お気に入りの曲をすべて削除）：</span><code>/deletefavorite all</code></p></li></ul></li><li><p><strong><span>playfavorite</span></strong><span>: お気に入りの曲を指定して再生するか、すべて再生します。</span><strong><span>このコマンドのメッセージは、スラッシュコマンドを使ってもサーバーのほかのメンバーに表示されます。</span></strong><span> 並び順は</span><strong><span>新しい順</span></strong><span>と</span><strong><span>古い順</span></strong><span>で、デフォルトは新しい順です。</span></p><ul><li><p><span>例（該当する曲がある場合、デフォルトの並び順で3番、5～7番、10番を再生。数字の間に空白は入れません）：</span><code>/playfavorite 3,5-7,10</code></p></li><li><p><span>例（該当する曲がある場合、古い順で3番の曲を再生）：</span><code>/playfavorite 3 earliest</code></p></li><li><p><span>例（デフォルトの並び順ですべて再生）：</span><code>/playfavorite all</code></p></li><li><p><span>例（古い順ですべて再生）：</span><code>/playfavorite all earliest</code></p></li></ul></li><li><p><strong><span>exportfavorite</span></strong><span>: お気に入りを、URLと曲名を含むカスタムプレイリスト形式で</span><a href='https://mystb.in'><span>mystb.in</span></a><span>へ書き出します。</span><strong><span>新しい順</span></strong><span>と</span><strong><span>古い順</span></strong><span>に対応しており、デフォルトは新しい順です。</span></p><ul><li><p><span>例（デフォルトの新しい順）：</span><code>/exportfavorite</code></p></li><li><p><span>例（古い順）：</span><code>/exportfavorite earliest</code></p></li></ul></li></ul><h3 id='お楽しみコマンド'><span>お楽しみコマンド</span></h3><hr /><p><span>    ミュートされているユーザーを除き、サーバーの誰でも使えるコマンドです。特別な権限は必要ありません。今後も増やしていく予定なので、アイデアがあればぜひ開発者に教えてください。楽しんでくださいね！</span></p><ul><li><p><strong><span>8ball</span></strong><span>: Qiqiに質問すると、Qiqiなりの答えを返してくれます！</span></p><ul><li><p><span>例： </span><code>/8ball is Qiqi happy today?</code></p></li></ul></li><li><p><strong><span>ping</span></strong><span>: Qiqiにpingを送り、応答までの時間を確認します。</span></p><ul><li><p><span>例： </span><code>/ping</code></p></li></ul></li><li><p><strong><span>choose</span></strong><span>: 選択肢を渡すと、Qiqiが一つ選んでくれます。なかなか決められないときのお手伝いに！選択肢は</span><u><span>セミコロンで区切ってください</span></u><span>：</span><code>;</code></p><ul><li><p><span>例： </span><code>/choose hamburger; sandwich; noodles; fried-chicken; noodles; pizza</code></p></li></ul></li><li><p><strong><span>say</span></strong><span>: あなたの言ったことをQiqiがそのまま繰り返します！</span></p><ul><li><p><span>例： </span><code>/echo Hello!</code></p></li></ul></li><li><p><strong><span>eightball</span></strong><span>（または_8ball、8ball）: Qiqiに質問すると、答えを返してくれます。</span></p><ul><li><p><span>例： </span><code>/eightball Is Qiqi happy today?</code></p></li></ul></li><li><p><strong><span>roll</span></strong><span>: 下限と上限を指定し、その両端を含む範囲からランダムな数字を出します。通常は1個だけですが、範囲のあとに個数を付ければ複数の結果を出せます。同じ数字の重複を許可するかどうかは、最初に指定してください。</span></p><ul><li><p><span>例（5～10の範囲から、重複なしで1個）：</span><code>/roll no 5 10</code></p></li><li><p><span>例（10～20の範囲から、重複ありで3個）：</span><code>/roll yes 10 20 3</code></p></li></ul></li><li><p><strong><span>fortune</span></strong><span>: 今日の運勢をおみくじで見てみましょう！引けるのは1日1回で、クールダウンは毎日UTC（GMT）9:00にリセットされます。時刻は24時間表記です。引くときに、一語のお祈りの言葉を添えることもできます。「選ばれし幸運」（極めて幸運）が出ると、運勢ランキングに参加できます。また、不運な結果だった日は、低い確率でもう1枚引くチャンスがもらえます。詳しくは</span><a href='https://www.botqiqi.com/index.html#faq'><span>よくある質問・20番</span></a><span>をご覧ください。</span></p><ul><li><p><span>例（お祈りの言葉なし）：</span><code>/fortune</code></p></li><li><p><span>例（お祈りの言葉あり）：</span><code>/fortune qiqi</code></p></li></ul></li><li><p><strong><span>fortune-ranking</span></strong><span>: 世界中のQiqiユーザーと競う運勢ランキングを確認できます。</span></p><ul><li><p><span>例： </span><code>/fortune-ranking</code></p></li><li><p><span>例（スマートフォン向けの表示）：</span><code>/fortune-ranking mobile</code></p></li></ul></li><li><p><strong><span>trans</span></strong><span> または translate: 入力した文章を指定の言語へ翻訳します。元の文章の言語はQiqiが自動で判別するので、指定する必要はありません。翻訳先を指定しない場合は、英語に翻訳します。</span></p><ul><li><p><span>例（翻訳先を指定しない）：</span><code>/trans hello</code></p></li><li><p><span>例（スペイン語へ翻訳）：</span><code>/trans spanish hello</code><span> または </span><code>/trans es hello</code></p></li></ul></li><li><p><strong><span>time</span></strong><span>: 指定した場所の現地時刻を確認します。</span></p><ul><li><p><span>例（北京の現地時刻）：</span><code>/time beijing</code></p></li></ul></li><li><p><strong><span>weather</span></strong><span>: 指定した都市の現在の天気を確認します。気温は摂氏と華氏の両方で表示し、そのほかの便利な気象情報もお知らせします。都市名は英語で入力するのがおすすめです。</span></p><ul><li><p><span>例（ロンドンの天気）：</span><code>/weather london</code></p></li></ul></li><li><p><strong><span>wolfram</span></strong><span> または wolframalpha: 質問を入力すると、Qiqiが</span><code>wolframalpha.com</code><span>の回答を返します。質問は英語で入力するのがおすすめです。</span></p><ul><li><p><span>例（中国の首都を質問）：</span><code>/wolfram capital of China</code></p></li><li><p><span>例（x^3の微分を質問）：</span><code>/wolfram d/dx(x^3)</code><span> または </span><code>/wolfram derivative of x^3</code></p></li></ul></li><li><p><strong><span>pat</span></strong><span>: なでる動作の</span><code>gif</code><span>を送ります！</span><code>@username</code><span>で相手を指定することもできます。</span></p><ul><li><p><span>例： </span><code>/pat</code></p></li><li><p><span>例（ユーザーがいる場合、その人をなでる）：</span><code>/pat @user</code></p></li></ul></li><li><p><strong><span>hug</span></strong><span>: ハグの</span><code>gif</code><span>を送ります。</span><code>@username</code><span>でハグする相手を指定できます。</span></p><ul><li><p><span>例： </span><code>/hug</code></p></li><li><p><span>例（ユーザーがいる場合、その人をハグする）：</span><code>/hug @user</code></p></li></ul></li><li><p><strong><span>cry</span></strong><span>: 泣いている</span><code>gif</code><span>を送ります。</span><code>@username</code><span>で相手に向けて泣くこともできます。</span></p><ul><li><p><span>例： </span><code>/cry</code></p></li><li><p><span>例（ユーザーがいる場合、その人に向けて泣く）：</span><code>/cry @user</code></p></li></ul></li><li><p><strong><span>cuddle</span></strong><span>: 寄り添う動作の</span><code>gif</code><span>を送ります。</span><code>@username</code><span>で寄り添う相手を指定できます。</span></p><ul><li><p><span>例： </span><code>/cuddle</code></p></li><li><p><span>例（ユーザーがいる場合、その人に寄り添う）：</span><code>/cuddle @user</code></p></li></ul></li><li><p><strong><span>nekogirl</span></strong><span>: 猫耳娘の</span><code>gif</code><span>を送ります。</span></p><ul><li><p><span>例： </span><code>/nekogirl</code></p></li></ul></li><li><p><strong><span>vote</span></strong><span>: Qiqiに応援投票して、もっと多くの人に知ってもらいましょう！</span></p><ul><li><p><span>例： </span><code>/vote</code></p></li></ul></li><li><p><strong><span>rps</span></strong><span>: サーバーのメンバーとじゃんけんをします。Qiqiと対戦することもできます。</span></p><ul><li><p><span>例： </span><code>/rps @user</code></p></li></ul></li><li><p><strong><span>paimon</span></strong><span>: このコマンドが何をするかは、パイモンだけが知っています。Qiqiは忘れてしまいました。</span></p></li></ul><h3 id='管理コマンド'><span>管理コマンド</span></h3><hr /><p><span>    サーバーの管理を便利にするコマンドです。使うコマンドによって必要な権限が異なります。</span><u><span>管理者権限を持つユーザーは、以下に挙げた権限を個別に付与されていなくても実行できます。</span></u></p><ul><li><p><strong><span>ban</span></strong><span>: ユーザーのサーバーへの参加を禁止します。</span><strong><code>ban_member</code><span>権限が必要です</span></strong><span>。</span></p><ul><li><p><span>例： </span><code>/ban @user</code></p></li></ul></li><li><p><strong><span>unban</span></strong><span>: ユーザーのサーバーへの参加禁止を解除します。</span><strong><code>ban_member</code><span>権限が必要です。</span></strong></p><ul><li><p><span>例： </span><code>/unban @user</code></p></li></ul></li><li><p><strong><span>clear</span></strong><span>: 指定した件数のメッセージを削除します。一度に削除できるのは100件までです。</span><strong><code>manage_messages</code><span>権限が必要です</span></strong><span>。</span></p><ul><li><p><span>例（現在のチャンネルの新しいメッセージ10件を削除）：</span><code>/clear 10</code></p></li></ul></li><li><p><strong><span>changeprefix</span></strong><span>: サーバーのカスタムプレフィックスを変更します。デフォルトは</span><code>q!</code><span>です。スラッシュコマンドの</span><code>/</code><span>を変更するものではありません。</span><strong><code>manage_message</code><span>権限が必要です。</span></strong></p><ul><li><p><span>例（プレフィックスを「qiqi」に変更）：</span><code>/changeprefix qiqi</code></p></li></ul></li><li><p><strong><span>kick</span></strong><span>: メンバーをサーバーからキックします。</span><strong><code>kick_member</code><span>権限が必要です。</span></strong></p><ul><li><p><span>例： </span><code>/kick @user optional:reason</code></p></li></ul></li><li><p><strong><span>mute</span></strong><span>: 指定したユーザーをミュートします。</span><strong><code>manage_messages</code><span>と</span><code>mute_member</code><span>の権限が必要です。</span></strong><span> ミュートされたユーザーは、</span><u><span>すべてのテキストチャンネルでメッセージを送信できなくなり、ボイスチャンネルでも発言できなくなります。</span></u></p><ul><li><p><span>例： </span><code>/mute @user optional: reason</code></p></li></ul></li><li><p><strong><span>unmute</span></strong><span>: 指定したユーザーのミュートを解除します。</span><strong><code>manage_messages</code><span>と</span><code>mute_member</code><span>の権限が必要です。</span></strong></p><ul><li><p><span>例： </span><code>/unmute @user</code></p></li></ul></li><li><p><strong><span>tempmute</span></strong><span>: 指定したユーザーを一時的にミュートします。</span><strong><code>manage_messages</code><span>と</span><code>mute_member</code><span>の権限が必要です。</span></strong><span> 時間の指定が必須で、上限は1日です。</span><code>d（日）</code><span>、</span><code>h（時間）</code><span>、</span><code>m（分）</code><span>、</span><code>s（秒）</code><span>で指定でき、時間になると自動的に解除されます。</span><strong><span>tempmuteは時間の加算にも対応しています。同じ相手にもう一度使うと、指定した時間が残り時間に加わります。</span></strong></p><ul><li><p><span>例（2時間ミュート）：</span><code>/tempmute @user 2h</code></p></li><li><p><span>例（予定より早く一時ミュートを解除）：</span><code>/unmute @user</code></p></li></ul></li><li><p><strong><span>deafen</span></strong><span>: </span><code>deaf</code><span>でも呼び出せます。指定したユーザーをサーバー側で受信ミュートにします。</span><strong><code>deafen_members</code><span>権限が必要です。</span></strong><span> 対象がボイスチャンネルに接続している場合のみ有効です。</span></p><ul><li><p><span>例： </span><code>/deafen @user</code></p></li></ul></li><li><p><strong><span>undeafen</span></strong><span>: </span><code>undeaf</code><span>でも呼び出せます。指定したユーザーの受信ミュートを解除します。</span><strong><code>deafen_members</code><span>権限が必要です。</span></strong><span> こちらも対象がボイスチャンネルに接続している場合のみ有効です。</span></p><ul><li><p><span>例： </span><code>/undeafen @user</code></p></li></ul></li><li><p><strong><span>audit</span></strong><span>: </span><code>al</code><span>でも呼び出せます。サーバーの最新の監査ログを、指定した件数だけ表示します。</span><strong><code>view_audit_logs</code><span>権限が必要です。</span></strong><span> 現在の上限は</span><code>20</code><span>件です。</span></p><ul><li><p><span>例（最新の監査ログ15件を表示）：</span><code>/audit 15</code></p></li></ul></li><li><p><strong><span>blacklist</span></strong><span>: </span><code>bl</code><span>でも呼び出せます。</span><strong><span>サーバーのブラックリスト</span></strong><span>にメンバーを追加・削除するか、一覧を表示します。登録されたユーザーは、Qiqiのコマンドを一切使えなくなります。</span><strong><code>moderate_members</code><span>権限が必要です。</span></strong></p><ul><li><p><span>例（メンバーをブラックリストに追加）：</span><code>/blacklist add @member reason</code></p></li><li><p><span>例（メンバーをブラックリストから削除）：</span><code>/blacklist remove @member</code></p></li><li><p><span>例（サーバーのブラックリストを表示）：</span><code>/blacklist view</code><span> または </span><code>/blacklist</code></p></li></ul></li></ul><h3 id='ユーティリティコマンド'><span>ユーティリティコマンド</span></h3><hr /><p><span>    Qiqi自身に関する便利なコマンドです。ボットの状態を確認したり、新しいサーバーへ招待したりできます。</span></p><ul><li><p><strong><span>invite</span></strong><span>: 最新版のQiqiをサーバーに招待するためのリンクを、ダイレクトメッセージで送ります。</span></p><ul><li><p><span>例： </span><code>/invite</code></p></li></ul></li><li><p><strong><span>userinfo</span></strong><span>: @userで指定したサーバーメンバーの公開プロフィールを確認します。</span></p><ul><li><p><span>例： </span><code>/userinfo @user</code></p></li></ul></li><li><p><strong><span>update</span></strong><span>: Qiqi Botの最近の更新内容やバージョン情報を、短いレポートで確認します。</span></p><ul><li><p><span>例： </span><code>/update</code></p></li></ul></li><li><p><strong><span>qiqi</span></strong><span>: Qiqiの現在の状態や情報を確認します。</span></p><ul><li><p><span>例： </span><code>/qiqi</code></p></li></ul></li><li><p><strong><span>policy</span></strong><span>: Qiqiの方針、説明、声明と、利用者のプライバシーをどう守っているかを確認できます。</span></p><ul><li><p><span>例： </span><code>/policy</code></p></li></ul></li><li><p><strong><span>credits</span></strong><span>: Qiqi Botの開発を助けてくれたサイトやコードの作者などを紹介します。</span></p><ul><li><p><span>例： </span><code>/credits</code></p></li></ul></li><li><p><strong><span>feedback</span></strong><span>: 不具合の報告、改善案、今後追加してほしい機能などを、Qiqiの開発者に送れます。</span></p><ul><li><p><span>例： </span><code>/feedback</code></p></li></ul></li><li><p><strong><span>doc</span></strong><span>: Qiqi Botの公式ドキュメントサイトを開きます。</span></p><ul><li><p><span>例： </span><code>/doc</code></p></li></ul></li><li><p><strong><span>setlang</span></strong><span>: Qiqiがあなたに応答する言語を設定します。対応している言語を選ぶと、その言語でメッセージが表示されます。スラッシュコマンドでは、通常はDiscordクライアントの言語を使います。</span></p><ul><li><p><strong><span>現在の対応言語：</span></strong></p><ul><li><p><code>英語</code></p></li><li><p><code>簡体字中国語</code></p></li><li><p><code>日本語</code></p></li><li><p><code>スペイン語</code></p></li><li><p><code>繁体字中国語</code></p></li></ul></li><li><p><span>例（簡体字中国語に設定）：</span><code>/setlang zh-hans</code><span> または </span><code>/setlang simplified chinese</code></p></li><li><p><span>例（自動判別に戻す）：</span><code>/setlang auto</code></p></li></ul></li><li><p><strong><span>settings</span></strong><span>: 現在は、表示言語の設定（</span><code>/setlang</code><span>と同じ機能）と、</span><code>/play</code><span>の検索に使う音楽サービスの設定ができます。デフォルトの音楽サービスは</span><code>soundcloud</code><span>です。</span></p><ul><li><p><span>例（設定の概要を表示）：</span><code>/settings overview</code></p></li><li><p><span>例（編集）：</span><code>/settings edit</code></p></li><li><p><span>例（リセット）：</span><code>/settings reset</code></p></li></ul></li></ul><h2 id='よくある質問'><span>よくある質問</span></h2><ul><li><p><span>よくある質問については、</span><a href='https://www.botqiqi.com/faq/faq_ja-jp.html'><span>こちらをクリックしてください</span></a></p></li></ul><h2 id='エイリアス'><span>エイリアス</span></h2><ul><li><p><span>別名については、</span><a href='https://www.botqiqi.com/aliases/aliases_ja-jp.html'><span>こちらをクリックしてください</span></a></p></li></ul><h2 id='ポリシー声明'><span>ポリシー声明</span></h2><hr /><ul><li><p><strong><span>基本方針</span></strong></p><ul><li><p><span>Qiqi Bot（以下「ボット」）は、プライバシーの重要性を踏まえ、ユーザーの個人情報を保護することを基本方針として設計しています。</span></p></li><li><p><span>ボットは次の情報を記録しますが、ユーザーやメンバーに関する情報は定期的に削除し、第三者に販売することはありません。詳しくは次の項目もご覧ください。収集・保存する情報は以下のとおりです。</span></p><ul><li><p><span>サーバーのカスタムコマンドプレフィックス。サーバーのguild IDと対応付けて保存します。</span></p></li><li><p><span>一時ミュートされたユーザー。tempmuteでは、適切に応答するためにサーバーとチャンネルの情報も記録します。</span></p></li><li><p><span>音楽に関するデータ（再生キュー・履歴・カスタムプレイリスト・お気に入り）。これらはユーザーの操作で削除できます。</span></p></li></ul></li><li><p><span>ボットは、ユーザーのデータを別の目的で再利用したり、個人・企業・プラットフォームへ販売したりすることは一切ありません。Discordの規則とコミュニティガイドラインを厳守し、収集したデータを安全に保管します。</span></p></li><li><p><span>サービスを提供するために、ユーザーのメッセージ内容へアクセスする必要があります。ただし、ユーザーのメッセージを保存することはありません。</span></p></li><li><p><strong><span>重要</span></strong><span>：ボットが支払い、クレジットカード情報、社会保障番号、その他の金融情報を求めることはありません。詐欺に注意してください。どのような種類であっても、ボットがあなたの金融情報を尋ねることはありません。</span></p></li><li><p><span>Netease Musicの</span><code>mynetease</code><span>について：これは、選んだNeteaseユーザーをボットに伝えるだけの機能であり、アカウントにログインするものではありません。</span><strong><span>Neteaseアカウントのパスワードは誰にも教えないでください。ボットが尋ねることもありません。</span></strong><span> 現在、関連付けたユーザーの情報を削除するコマンドはありませんが、開発者にDM・サポートサーバー・メールで連絡すれば、削除を依頼できます。</span></p></li></ul></li><li><p><strong><span>データやプライバシーが露出する可能性</span></strong></p><ul><li><p><span>Qiqiの大型更新</span><code>v1.6</code><span>以降、</span><strong><code>bmi</code><span>、</span><code>calcgpa</code><span>、</span><code>gpascale</code><span>は削除されます</span></strong><span>。これにより、それらに伴うプライバシーの問題も解消されます。</span></p></li><li><p><span>これらの機能を動作させるために、ボットはNetease Musicのアカウントを使用しています。ただし、ボット経由で音楽を再生しても、そのアカウントに再生履歴や関連データは残りません。</span><strong><span>そのため、現在Netease Musicの機能に関して、既知のプライバシー露出の可能性はありません。</span></strong></p></li></ul></li><li><p><strong><code>fortune</code><span>コマンドでの情報共有</span></strong></p><ul><li><p><code>fortune</code><span>で「極めて幸運」が出た場合、記録をアップロードするかどうかは</span><strong><span>自分で選べます</span></strong><span>。自動でアップロードされることはありません。</span><strong><span>共有することを選ぶと、以下の情報がランキングに掲載されます。</span></strong></p><ul><li><p><strong><span>Discordのユーザー名</span></strong></p></li><li><p><strong><span>「極めて幸運」が出た合計回数</span></strong></p></li><li><p><strong><span>初めて「極めて幸運」が出た日時</span></strong></p></li><li><p><strong><span>自己ベストのデータ</span></strong></p></li></ul></li><li><p><span>これらの情報は、Qiqiの</span><code>fortune-ranking</code><span>を使うすべてのユーザーに表示されます。</span></p></li></ul></li></ul><h2 id='利用規約'><span>利用規約</span></h2><hr /><ul><li><p><strong><span>基本的な利用条件と同意</span></strong></p><ul><li><p><span>Qiqi Botをサーバーに招待した場合、またはいずれかのサーバーで利用した場合は、本利用規約に同意したものとみなします。規約に違反しないよう、以下をよくお読みください。</span></p></li><li><p><strong><span>Qiqi Botを違法な行為に使うことを禁止します。</span></strong><span> Qiqi Botは、ユーザーの違法行為に対して訴訟を起こす権利を留保します。適法な方法で利用してください。</span></p></li><li><p><span>Qiqi Botを使ったスパム行為は禁止です。ボットには、スパムを検知して止めるクールダウン機能があります。</span></p></li><li><p><span>現時点で、ボットが支払いを要求したり、料金を請求したりすることはありません。</span></p></li><li><p><span>ボットにNSFWコンテンツはありません。</span></p></li><li><p><span>現在、Qiqi Botはセルフホスティングに対応していません。</span></p></li><li><p><a href='#ポリシー声明'><span>プライバシーに関する説明</span></a><span>も、よくお読みください。</span></p></li><li><p><del><span>YouTube</span></del><span>、Soundcloud、Bilibili、Netease Music、Pengu、</span><del><span>Spotify</span></del><span>の音楽機能は、これらの優れたサービスをより多くの人に知ってもらい、地域を越えた文化交流を促すことを目的としています。</span></p></li><li><p><span>更新の時刻や内容は、Qiqiサポートサーバーとドキュメントサイトでお知らせします。</span></p></li><li><p><span>不具合、遅延、Qiqi側の問題がある場合は、サポートサーバーに参加するか、公式メールアドレスへ連絡してください。宛先は</span><a href='#連絡先'><span>連絡先</span></a><span>にあります。</span></p></li><li><p><span>本利用規約は、Qiqi Botがオンラインである間、有効です。メンテナンスやバージョン更新の間も有効です。</span></p></li><li><p><span>Qiqiと開発者は、コマンドを乱用したり、頻繁にクールダウンの制限に達したりするユーザーの利用を禁止する権利を留保します。ボット全体での利用禁止は、自動で行われる場合もあります。マナーを守って利用してください。</span></p></li></ul></li><li><p><strong><span>最終的な解釈について</span></strong></p><ul><li><p><span>開発者Master_30#0361は、Qiqi Botに関する最終的な解釈の権利を留保します。</span></p></li></ul></li></ul><h2 id='バージョン履歴'><span>バージョン履歴</span></h2><hr /><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>Qiqi Botの各バージョンを記録しています。ただし、</span><code>Beta 0.3.0.0</code><span>より前の小規模な更新や不具合修正は含みません。</span></p><p><span>補足：開発中のすべてのバージョンを記録するものではありません。安定したリリース版のみを掲載しています。</span></p></div><figure class='table-figure'><table><thead><tr><th><span>バージョン番号</span></th><th><span>更新日（MM/DD/YYYY）</span></th><th><span>更新内容</span></th></tr></thead><tbody><tr><td><code>2.0.0.0</code></td><td><span>10/18/2026</span></td><td><a href='https://www.botqiqi.com/updates/update2_0_ja-jp.html'><span>詳細はこちらをクリックしてください</span></a></td></tr><tr><td><code>1.7.1.2</code></td><td><span>04/15/2025</span></td><td><span>Bilibiliのお気に入りリストを読み込むと、先頭の曲が再生キューへ2回追加される不具合を修正</span></td></tr><tr><td><code>1.7.1.1</code></td><td><span>03/23/2025</span></td><td><span>運勢ランキングをS5に更新</span></td></tr><tr><td><code>1.7.1.0</code></td><td><span>03/17/2025</span></td><td><span>正の整数や範囲をカンマで区切り、お気に入りの複数曲を再生・削除する機能を追加 </span><span>|</span><span> Bilibiliユーザーのお気に入り動画リストの再生に対応 </span><span>|</span><span> 抽出処理の性能を改善し、関連する不具合を修正</span></td></tr><tr><td><code>1.7.0.1</code></td><td><span>02/17/2025</span></td><td><span>一部のNetEaseプレイリストを正しく再生できない不具合を修正</span></td></tr><tr><td><strong><code>1.7.0.0</code></strong></td><td><strong><span>02/04/2025</span></strong></td><td><strong><span>音楽機能の内部処理を書き直し、性能を改善。Soundcloudの音楽に対応 </span><span>|</span><span> 音楽サービスとしてPenguを追加 </span><span>|</span><span> 音楽コマンド</span><code>pengu</code><span>、</span><code>pengualbum</code><span>、</span><code>penguplaylist</code><span>を追加</span></strong></td></tr><tr><td><code>1.6.3.0</code></td><td><span>03/30/2024</span></td><td><code>fortune-ranking</code><span>を更新し、シーズン1を開始</span></td></tr><tr><td><code>1.6.2.6</code></td><td><span>03/14/2024</span></td><td><span>ユーザーの言語設定が保存されない不具合を修正 </span><span>|</span><span> </span><code>fortune-ranking</code><span>の初回獲得日時の操作に応答しない不具合を修正</span></td></tr><tr><td><code>1.6.2.3</code></td><td><span>03/13/2024</span></td><td><code>fortune-ranking</code><span>に自己ベストなどのランキング形式を追加し、軽微な不具合を修正</span></td></tr><tr><td><code>1.6.2.0</code></td><td><span>02/29/2024</span></td><td><code>skip later</code><span>機能を追加</span></td></tr><tr><td><code>1.6.1.0</code></td><td><span>02/07/2024</span></td><td><code>fortune</code><span>コマンドの仕組みを改善</span></td></tr><tr><td><code>1.6.0.5</code></td><td><span>12/24/2023</span></td><td><span>NetEase MusicのURL検証で、</span><code>#/</code><span>と</span><code>/home</code><span>を省略できるよう変更</span></td></tr><tr><td><code>1.6.0.2</code></td><td><span>12/05/2023</span></td><td><span>zh-CN（簡体字中国語）の翻訳ファイルの誤字を修正</span></td></tr><tr><td><code>1.6.0.1</code></td><td><span>11/24/2023</span></td><td><span>再生キューの記録の保持時間を、30秒ではなく2時間になるよう修正 </span><span>|</span><span> </span><code>setlang</code><span>コマンドの誤ったメッセージを修正 </span><span>|</span><span> 軽微な不具合や誤字を修正</span></td></tr><tr><td><strong><code>1.6.0.0</code></strong></td><td><strong><span>11/19/2023</span></strong></td><td><strong><span>音楽機能の内部処理、特に再生キューの仕組みを書き直し、性能を大幅に改善 </span><span>|</span><span> 多言語対応の翻訳と、言語を手動設定する</span><code>setlang</code><span>を追加 </span><span>|</span><span> </span><code>blacklist</code><span>、</span><code>nekogirl</code><span>コマンドを追加 </span><span>|</span><span> </span><code>roll</code><span>を再構成し、</span><code>bmi</code><span>、</span><code>calcgpa</code><span>、</span><code>gpascale</code><span>を削除 </span><span>|</span><span> </span><code>playhistory</code><span>で範囲指定による再生に対応 </span><span>|</span><span> 不具合や誤字を修正</span></strong></td></tr><tr><td><code>1.5.4.2</code></td><td><span>09/30/2023</span></td><td><span>プレフィックスと音楽に関するRuntime Errorを修正</span></td></tr><tr><td><code>1.5.4.1</code></td><td><span>08/15/2023</span></td><td><span>複数の音楽サービスで発生する403エラーを修正</span></td></tr><tr><td><code>1.5.4.0</code></td><td><span>07/31/2023</span></td><td><span>原神データベースを3.8後半（珊瑚宮心海 </span><span>|</span><span> 放浪者）に対応させる更新 </span><span>|</span><span> Bilibiliの403 Forbiddenが頻発する問題を修正 </span><span>|</span><span> 開発者向けツールを追加</span></td></tr><tr><td><code>1.5.3.0</code></td><td><span>07/08/2023</span></td><td><span>低い確率でキャラクターの別衣装を表示する機能を追加 </span><span>|</span><span> 原神データベースを3.8前半（エウルア </span><span>|</span><span> クレー）に対応させる更新 </span><span>|</span><span> 開発者向けツールを追加</span></td></tr><tr><td><code>1.5.2.2</code></td><td><span>06/22/2023</span></td><td><code>clear</code><span>と</span><code>bilibili &lt;keyword&gt;</code><span>に関する不具合を修正 </span><span>|</span><span> </span><code>bilibili</code><span>のキーワード検索を高速化</span></td></tr><tr><td><code>1.5.2.0</code></td><td><span>06/21/2023</span></td><td><span>武器の基本情報を調べる</span><code>weapon</code><span>を追加 </span><span>|</span><span> 原神データベースを3.7後半（アルハイゼン </span><span>|</span><span> 楓原万葉）に対応させる更新 </span><span>|</span><span> 開発者向けツールを追加 </span><span>|</span><span> 誤字や不具合を修正</span></td></tr><tr><td><code>1.5.1.0</code></td><td><span>05/23/2023</span></td><td><span>原神データベースを3.7前半（宵宮 </span><span>|</span><span> 八重神子）に対応させる更新 </span><span>|</span><span> 不具合を修正</span></td></tr><tr><td><code>1.5.0.8</code></td><td><span>05/22/2023</span></td><td><span>Qiqiの性能を改善 </span><span>|</span><span> volumeコマンドを一時的に削除</span></td></tr><tr><td><code>1.5.0.6</code></td><td><span>05/20/2023</span></td><td><span>不具合を修正 </span><span>|</span><span> Qiqiの性能を改善 </span><span>|</span><span> 開発者向けツールを追加</span></td></tr><tr><td><strong><code>1.5.0.0</code></strong></td><td><strong><span>05/18/2023</span></strong></td><td><strong><span>音楽サービスとしてSpotify Musicを追加。曲・プレイリスト・アルバム・アーティスト用のコマンド</span><code>spotify</code><span>、</span><code>spotifyplaylist</code><span>、</span><code>spotifyalbum</code><span>、</span><code>spotifyartist</code><span>に対応 </span><span>|</span><span> すべての音楽の音量を調整する</span><code>volume</code><span>を追加 </span><span>|</span><span> 原神データベースを3.6後半（白朮 </span><span>|</span><span> 甘雨）に対応させる更新 </span><span>|</span><span> Qiqiの監視を改善する開発者向けツールを追加 </span><span>|</span><span> コードを最適化して性能を改善 </span><span>|</span><span> 不具合や誤字を修正</span></strong></td></tr><tr><td><code>1.4.10.2</code></td><td><span>04/29/2023</span></td><td><span>exportfavoriteに表示順の指定を追加 </span><span>|</span><span> helpコマンドを更新</span></td></tr><tr><td><code>1.4.10.1</code></td><td><span>04/26/2023</span></td><td><span>playfavorite、addfavorite、deletefavoriteに表示順の指定を追加</span></td></tr><tr><td><code>1.4.10.0</code></td><td><span>04/16/2023</span></td><td><span>viewfavoriteに時系列の並べ替えを追加 </span><span>|</span><span> exportで再生キューと履歴を別々のプレイリストに分けて出力するよう改善 </span><span>|</span><span> exportとexportfavoriteでURLと名前の両方を書き出すよう改善 </span><span>|</span><span> カスタムプレフィックスで呼び出すコマンドの性能を大幅に改善 </span><span>|</span><span> ボットの統計収集を改善 </span><span>|</span><span> 一部コマンドの説明を改善し、誤字を修正 </span><span>|</span><span> 原神データベースを3.6前半（ナヒーダ </span><span>|</span><span> ニィロウ）に対応させる更新</span></td></tr><tr><td><code>1.4.9.1</code></td><td><span>03/02/2023</span></td><td><span>カスタムプレイリストから追加された曲の番号情報を再生キューに追加</span></td></tr><tr><td><code>1.4.9.0</code></td><td><span>03/02/2023</span></td><td><span>カスタムプレイリストの処理を更新し、上限を100曲に拡大。各URLに短い名前を付けられるよう変更（推奨） </span><span>|</span><span> 原神データベースを3.5前半（ディシア </span><span>|</span><span> セノ）に対応させる更新 </span><span>|</span><span> resetの機能を改善 </span><span>|</span><span> 不具合を修正</span></td></tr><tr><td><code>1.4.8.0</code></td><td><span>02/13/2023</span></td><td><span>原神データベースを3.4後半（胡桃 </span><span>|</span><span> 夜蘭）に対応させる更新 </span><span>|</span><span> 開発者向けツールを更新</span></td></tr><tr><td><code>1.4.7.0</code></td><td><span>01/31/2023</span></td><td><span>&quot;manage_messages&quot;権限のチェックを省くようボットの処理を変更 </span><span>|</span><span> Discordのネタバレメッセージの文字をエスケープ </span><span>|</span><span> on_voice_state_updateの処理を更新し、案内メッセージを削除 </span><span>|</span><span> 原神データベースを3.4前半（アルハイゼン </span><span>|</span><span> 魈）に対応させる更新 </span><span>|</span><span> 軽微な不具合を修正</span></td></tr><tr><td><code>1.4.6.0</code></td><td><span>12/29/2022</span></td><td><span>原神データベースを3.3後半（雷電将軍 </span><span>|</span><span> 神里綾人）に対応させる更新 </span><span>|</span><span> 誤字を修正し、原神データベースに用語を追加</span></td></tr><tr><td><code>1.4.5.4</code></td><td><span>12/22/2022</span></td><td><span>&quot;mynetease&quot;、&quot;viewfavorite&quot;、&quot;help&quot;の不具合を修正</span></td></tr><tr><td><code>1.4.5.0</code></td><td><span>12/21/2022</span></td><td><span>お気に入りの上限を30曲から100曲に拡大 </span><span>|</span><span> お気に入りの読み込み処理を変更 </span><span>|</span><span> playfavoriteのクールダウンを短縮 </span><span>|</span><span> voteskip、favorite、auditlogなどの不具合を修正し、ブロッキング処理を削除 </span><span>|</span><span> Genshin_DBの武器情報を更新 </span><span>|</span><span> データベースの安全性を改善</span></td></tr><tr><td><code>1.4.4.0</code></td><td><span>12/12/2022</span></td><td><span>queueとhistoryに「指定したページへ移動」ボタンを追加</span></td></tr><tr><td><code>1.4.3.0</code></td><td><span>12/08/2022</span></td><td><span>原神データベースを3.3前半（放浪者 </span><span>|</span><span> 荒瀧一斗）に対応させる更新</span></td></tr><tr><td><code>1.4.2.0</code></td><td><span>11/19/2022</span></td><td><span>原神データベースを3.2後半（八重神子 </span><span>|</span><span> タルタリヤ）に対応させる更新 </span><span>|</span><span> カスタムプレフィックスの不具合を修正 </span><span>|</span><span> 原神データベースの誤字や不具合を修正 </span><span>|</span><span> バックエンドサービスを更新</span></td></tr><tr><td><code>1.4.1.0</code></td><td><span>11/09/2022</span></td><td><span>キーワードで再生キュー内の曲の位置を検索する機能を追加 </span><span>|</span><span> sleepを取り消す機能を追加 </span><span>|</span><span> top.ggへの自動投稿を復旧 </span><span>|</span><span> 不具合を修正 </span><span>|</span><span> 使いやすさを改善</span></td></tr><tr><td><strong><code>1.4.0.0</code></strong></td><td><strong><span>11/03/2022</span></strong></td><td><strong><span>音楽サービスとしてNetEase Musicを追加。曲・プレイリスト・ユーザーに関するコマンド</span><code>netease</code><span>、</span><code>neteaseplaylist</code><span>、</span><code>neteaseuser</code><span>、</span><code>mynetease</code><span>、</span><code>playmynetease</code><span>、</span><code>newsongs</code><span>に対応 </span><span>|</span><span> Bilibili動画のキーワード検索を追加 </span><span>|</span><span> スリープタイマー用の</span><code>sleep</code><span>を追加 </span><span>|</span><span> 原神データベースを3.2前半（ナヒーダ </span><span>|</span><span> 宵宮）に対応させる更新 </span><span>|</span><span> 不具合を修正 </span><span>|</span><span> 使いやすさを改善</span></strong></td></tr><tr><td><code>1.3.10.0</code></td><td><span>10/15/2022</span></td><td><span>原神データベースを3.1後半（ニィロウ </span><span>|</span><span> アルベド）に対応させる更新 </span><span>|</span><span> 原神の武器計算の翻訳が逆になっていた問題を修正</span></td></tr><tr><td><code>1.3.9.1</code></td><td><span>10/11/2022</span></td><td><span>音楽のライブストリーミング時の接続維持エラーと、使用できない接続を再利用する不具合を修正</span></td></tr><tr><td><code>1.3.9.0</code></td><td><span>10/10/2022</span></td><td><span>top.ggへサーバー数を投稿する機能を追加 </span><span>|</span><span> 音楽コマンドの不具合を修正 </span><span>|</span><span> 誤字を修正 </span><span>|</span><span> エイリアスを追加</span></td></tr><tr><td><code>1.3.8.0</code></td><td><span>09/28/2022</span></td><td><span>原神データベースを3.1前半（セノ </span><span>|</span><span> ウェンティ）に対応させる更新</span></td></tr><tr><td><code>1.3.7.1</code></td><td><span>09/15/2022</span></td><td><span>talent-calcの例外処理を以前の状態に戻す</span></td></tr><tr><td><code>1.3.7.0</code></td><td><span>09/09/2022</span></td><td><span>原神データベースを3.0後半（甘雨 </span><span>|</span><span> 珊瑚宮心海）に対応させる更新 </span><span>|</span><span> 武器計算の画像を更新 </span><span>|</span><span> 誤字を修正</span></td></tr><tr><td><code>1.3.6.0</code></td><td><span>08/31/2022</span></td><td><code>savecp</code><span>コマンドの機能を更新</span></td></tr><tr><td><code>1.3.5.0</code></td><td><span>08/29/2022</span></td><td><code>export</code><span> </span><span>|</span><span> </span><code>playcp</code><span> </span><span>|</span><span> </span><code>exportfavorite</code><span>の機能を更新</span></td></tr><tr><td><code>1.3.2.0</code></td><td><span>08/28/2022</span></td><td><span>原神データベースを3.0前半（ティナリ </span><span>|</span><span> 鍾離）に対応させる更新 </span><span>|</span><span> 原神データベースの旅人に関する結果を改善 </span><span>|</span><span> 誤字を修正</span></td></tr><tr><td><code>1.3.1.1</code></td><td><span>08/13/2022</span></td><td><span>mystb.inのPython APIラッパー（旧版）を一時的に更新</span></td></tr><tr><td><code>1.3.1.0</code></td><td><span>08/03/2022</span></td><td><span>原神データベースを2.8後半（宵宮）に対応させる更新 </span><span>|</span><span> GenshinDBのあいまい検索用の語句を更新</span></td></tr><tr><td><strong><code>1.3.0.0</code></strong></td><td><strong><span>07/29/2022</span></strong></td><td><strong><span>ユーザーが曲を管理し、サーバーをまたいで再生できるお気に入り機能を追加 </span><span>|</span><span> 音楽コマンド</span><code>restart</code><span>、</span><code>seek</code><span>、</span><code>forward</code><span>、</span><code>rewind</code><span>を追加 </span><span>|</span><span> </span><code>voteskip</code><span>の投票成立の処理を改善 </span><span>|</span><span> 不具合を修正 </span><span>|</span><span> 使いやすさを改善</span></strong></td></tr><tr><td><code>1.2.3.1</code></td><td><span>07/18/2022</span></td><td><span>新しく参加したサーバーでの</span><code>stop</code><span>の不具合を修正</span></td></tr><tr><td><code>1.2.3.0</code></td><td><span>07/13/2022</span></td><td><span>原神データベースを2.8前半（楓原万葉 </span><span>|</span><span> クレー）に対応させる更新</span></td></tr><tr><td><code>1.2.2.0</code></td><td><span>07/09/2022</span></td><td><span>管理者向けの音楽コマンドresetを追加 </span><span>|</span><span> ユーザーによる手動切断のあとに接続すると失敗するClientExceptionを修正 </span><span>|</span><span> ボット自身の切断時のボイス状態更新メッセージを修正</span></td></tr><tr><td><code>1.2.1.5</code></td><td><span>07/01/2022</span></td><td><span>403エラーを検知した際に、期限切れの音楽URLを再取得する処理を改善</span></td></tr><tr><td><code>1.2.1.4</code></td><td><span>06/26/2022</span></td><td><span>スラッシュコマンドで</span><code>playcp</code><span>を使うと、カスタムプレイリストの最初の曲しか読み込まれない不具合を修正</span></td></tr><tr><td><code>1.2.1.3</code></td><td><span>06/25/2022</span></td><td><span>新しく追加した曲に対する</span><code>repeat single</code><span>の不具合を修正 </span><span>|</span><span> モバイル版で</span><code>play</code><span>が「アプリケーションが応答しません」となる問題を改善 </span><span>|</span><span> Qiqi Botのサービスを改善</span></td></tr><tr><td><code>1.2.1.0</code></td><td><span>06/24/2022</span></td><td><span>原神データベースを2.7後半（荒瀧一斗）に更新 </span><span>|</span><span> 使いやすさを改善</span></td></tr><tr><td><strong><code>1.2.0.0</code></strong></td><td><strong><span>06/15/2022</span></strong></td><td><strong><span>既存のすべてのコマンドをハイブリッド化し、スラッシュコマンドに対応 </span><span>|</span><span> リアクションからボタンへUIを改善 </span><span>|</span><span> カスタムヘルプページを追加 </span><span>|</span><span> お楽しみコマンドを追加し、不具合と使いやすさを改善</span></strong></td></tr><tr><td><code>1.1.3.1</code></td><td><span>06/02/2022</span></td><td><span>ボットの性能やエラーを監視するためのDiscordログを追加 </span><span>|</span><span> カスタムプレイリストの不具合を修正</span></td></tr><tr><td><code>1.1.2.0</code></td><td><span>05/31/2022</span></td><td><span>原神データベースを2.7前半（夜蘭）に更新</span></td></tr><tr><td><code>1.1.1.0</code></td><td><span>04/20/2022</span></td><td><span>原神データベースを2.6後半（神里綾華）に更新</span></td></tr><tr><td><strong><code>1.1.0.0</code></strong></td><td><strong><span>04/10/2022</span></strong></td><td><strong><span>mystb.inのカスタムプレイリストと、関連コマンド</span><code>playcp</code><span>、</span><code>savecp</code><span>、</span><code>viewcp</code><span>、</span><code>deletecp</code><span>に対応 </span><span>|</span><span> gif画像のお楽しみコマンド</span><code>pat</code><span>、</span><code>hug</code><span>、</span><code>cry</code><span>、</span><code>cuddle</code><span>を追加 </span><span>|</span><span> 重大な不具合を修正し、使いやすさを改善</span></strong></td></tr><tr><td><strong><code>1.0.0.0</code></strong></td><td><strong><span>04/02/2022</span></strong></td><td><strong><span>データを管理する本格的なデータベースを導入 </span><span>|</span><span> 音楽コマンド</span><code>nowplaying</code><span>、</span><code>repeat all</code><span>、</span><code>history</code><span>、</span><code>playhistory</code><span>、</span><code>voteskip</code><span>、</span><code>export</code><span>を追加 </span><span>|</span><span> お楽しみコマンド</span><code>weather</code><span>、</span><code>qiqi</code><span>、</span><code>time</code><span>、</span><code>wolfram</code><span>、</span><code>translate</code><span>を追加 </span><span>|</span><span> 使いやすさを改善</span></strong></td></tr><tr><td><code>0.6.11.0</code></td><td><span>04/01/2022</span></td><td><span>原神データベースを2.6前半（神里綾人 </span><span>|</span><span> ウェンティ）に更新</span></td></tr><tr><td><code>0.6.8.0</code></td><td><span>03/08/2022</span></td><td><code>roll</code><span>、</span><code>rollrepeat</code><span>コマンドを追加 </span><span>|</span><span> 原神データベースを2.5後半（雷電将軍）に更新</span></td></tr><tr><td><code>0.6.5.1</code></td><td><span>02/21/2022</span></td><td><span>原神データベースを2.5前半（八重神子）に更新</span></td></tr><tr><td><code>0.6.4.12</code></td><td><span>01/26/2022</span></td><td><code>mute</code><span>、</span><code>unmute</code><span>、</span><code>tempmute</code><span>の使いやすさを改善 </span><span>|</span><span> 軽微な不具合を修正。管理者権限なしでもミュートコマンドが動作するように変更</span></td></tr><tr><td><code>0.6.4.9</code></td><td><span>01/25/2022</span></td><td><span>管理コマンド</span><code>deafen</code><span>、</span><code>undeafen</code><span>、</span><code>audit</code><span>を追加 </span><span>|</span><span> 原神データベースを2.4後半（鍾離 </span><span>|</span><span> 甘雨）に更新 </span><span>|</span><span> 軽微な不具合を修正 </span><span>|</span><span> 使いやすさを改善</span></td></tr><tr><td><code>0.6.0.0</code></td><td><span>01/24/2022</span></td><td><span>原神コマンド</span><code>char</code><span>（キャラクターの基本情報）、</span><code>talents</code><span>（天賦）、</span><code>cons</code><span>（命ノ星座）を追加 </span><span>|</span><span> 管理コマンド</span><code>mute</code><span>（テキストとボイスの両方でミュート）、</span><code>unmute</code><span>、</span><code>tempmute</code><span>（時間指定の一時ミュート）を追加</span></td></tr><tr><td><code>0.5.4.3</code></td><td><span>01/06/2022</span></td><td><span>原神データベースを2.4前半（申鶴）に更新 </span><span>|</span><span> </span><code>fortune</code><span>と</span><code>userinfo</code><span>を追加 </span><span>|</span><span> 軽微な不具合と原神データベースの情報欠落を修正</span></td></tr><tr><td><code>0.5.1.0</code></td><td><span>12/19/2021</span></td><td><code>1.0.0.0</code><span>に向け、新しいクラウドサービスへ移行 </span><span>|</span><span> </span><code>userinfo</code><span>機能を追加</span></td></tr><tr><td><code>0.4.1.4</code></td><td><span>12/18/2021</span></td><td><span>site-packages情報を更新 </span><span>|</span><span> repeatの応答メッセージを追加 </span><span>|</span><span> jumpの応答メッセージの番号の誤りを修正</span></td></tr><tr><td><code>0.4.1.1</code></td><td><span>12/18/2021</span></td><td><span>原神データベースを2.3後半</span><span>(</span><span>荒瀧一斗)に更新 </span><span>|</span><span> エラーハンドラーの@に関する不具合を修正</span></td></tr><tr><td><code>0.4.0.0</code></td><td><span>12/17/2021</span></td><td><span>音楽コマンド</span><code>repeat</code><span>（1曲のみ）、</span><code>policy</code><span>、</span><code>credits</code><span>を追加 </span><span>|</span><span> 使いやすさを改善し、スパムを起こしにくくする変更 </span><span>|</span><span> 軽微な不具合を修正</span></td></tr><tr><td><code>0.3.3.2</code></td><td><span>12/16/2021</span></td><td><span>ボットの応答の誤字を修正</span></td></tr><tr><td><code>0.3.3.1</code></td><td><span>12/16/2021</span></td><td><span>開発者向け機能を追加</span></td></tr><tr><td><code>0.3.3.0</code></td><td><span>12/16/2021</span></td><td><span>Bilibiliの音楽再生に対応</span></td></tr><tr><td><code>0.3.2.7</code></td><td><span>12/15/2021</span></td><td><span>プレフィックスが見つからない場合に、デフォルト設定を使うよう更新</span></td></tr><tr><td><code>0.3.2.5</code></td><td><span>12/15/2021</span></td><td><span>コマンドが見つからない場合は、エラーメッセージを返さないよう変更</span></td></tr><tr><td><code>0.3.2.4</code></td><td><span>12/13/2021</span></td><td><span>音楽コマンド</span><code>jump</code><span>と</span><code>shuffle</code><span>を追加</span></td></tr><tr><td><code>0.3.0.1</code></td><td><span>12/12/2021</span></td><td><span>タイムアウト時の誤った応答メッセージを修正</span></td></tr><tr><td><code>0.3.0.0</code></td><td><span>12/11/2021</span></td><td><span>原神・音楽機能を公開</span></td></tr><tr><td><code>0.2.0.0</code></td><td><span>11/20/2021</span></td><td><span>原神機能が完成。</span><strong><span>未公開</span></strong></td></tr><tr><td><code>0.1.6.0</code></td><td><span>09/27/2021</span></td><td><span>Cogの再構成が完了。</span><strong><span>未公開</span></strong></td></tr><tr><td><code>0.1.0.0</code></td><td><span>05/13/2021</span></td><td><span>初期の統合版。</span><strong><span>未公開</span></strong></td></tr></tbody></table></figure><h2 id='スペシャルサンクス'><span>スペシャルサンクス</span></h2><p><em><span>Qiqiは、助けてくれた人たちのことを忘れません。</span></em></p><ul><li><p><strong><span>Nanika</span></strong><span>: 多言語対応の構造と関連アルゴリズムで協力し、Qiqiのi18n（国際化）機能に大きく貢献してくれました。</span></p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>Nanikaの協力がなければ、Qiqiの現在のi18nをこれほど早く、順調に実装することはできませんでした。</span></p></div></li></ul><h2 id='連絡先'><span>連絡先</span></h2><hr /><ul><li><p><span>メール（開発者）：</span><a href='mailto:qiqibot77@gmail.com' target='_blank' class='url'>qiqibot77@gmail.com</a></p></li><li><p><span>Discordボットサポートサーバー：</span><a href='https://discord.gg/gbv6TveBRX' target='_blank' class='url'>https://discord.gg/gbv6TveBRX</a></p></li><li><p><span>Discord ID（開発者）：Master_30</span></p></li></ul></div></div>
+</body>
+</html>
